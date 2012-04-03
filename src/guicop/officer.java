@@ -22,10 +22,26 @@ import org.antlr.stringtemplate.*;
 
 public class officer {
     private ArrayList<specobject> objects;
-    private ArrayList<shape> shapes;
+
+    private HashMap typeToShapesListIndex;
+    private ArrayList<ArrayList<shape>> shapes;
+    private String[] classes = {"rectangle", "triangle", "ellipse", "line", "polygon", "text", "textrect"};
 
     public officer() {
         objects = new ArrayList();
+        shapes = new ArrayList();
+        for (int i= 0; i < classes.length; i++) {
+            shapes.add(new ArrayList());
+        }
+        typeToShapesListIndex = initShapesListIndex(classes);
+    }
+
+    private HashMap initShapesListIndex(String[] c) {
+        HashMap m = new HashMap();
+        for (int i= 0; i < c.length; i++) {
+            m.put(c[i], i);
+        }
+        return m;
     }
 
     public void readSpec (String filePath) throws Exception {
@@ -66,9 +82,12 @@ public class officer {
 	outParser.listofproperties_return result = parser.listofproperties();
 	Tree ast = (Tree)result.getTree();
 
+        HashMap temp = new HashMap();
+        
         for (int i= 0; i < ast.getChildCount(); i++) {
             Tree subAst = ast.getChild(i);
             String objectType = subAst.getText();
+            // construct object string (ex: rectangle(12,23,34,45))
             String objectStr = objectType + "(";
             for (int j= 0; j < subAst.getChildCount(); j++) {
                 if(j>0)
@@ -76,14 +95,28 @@ public class officer {
                 objectStr += subAst.getChild(j).getText();
             }
             objectStr+= ")";
-            Class theClass = Class.forName("geometric." + objectType);
 
+            // find and the constructor based on the type of the object
+            Class theClass = Class.forName("geometric." + objectType);
             Object obj = theClass.getConstructors()[0].newInstance();
             shape newShape = (shape)obj;
+
             newShape.fromString(objectStr);
-            newShape.print();
-            
+
+            if(!temp.containsKey(objectStr)) {
+                temp.put(objectStr, "");
+                int index = Integer.parseInt(typeToShapesListIndex.get(objectType).toString());
+                shapes.get(index).add(newShape);
+            }
         }
+        temp.clear();
     }
 
+    public void printList() {
+        for (int i= 0; i < shapes.size(); i++) {
+            for (int j= 0; j < shapes.get(i).size(); j++) {
+                System.out.println(classes[i] + " : " + shapes.get(i).get(j).printToString());
+            }
+        }
+    }
 }
