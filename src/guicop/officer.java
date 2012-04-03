@@ -67,10 +67,8 @@ public class officer {
 
             // get constraints
             Tree constraints = objectTree.getChild(2);
-
             
         }
-
     }
 
 
@@ -100,9 +98,9 @@ public class officer {
             Class theClass = Class.forName("geometric." + objectType);
             Object obj = theClass.getConstructors()[0].newInstance();
             shape newShape = (shape)obj;
-
             newShape.fromString(objectStr);
 
+            // if a similar object has not been alread added, add it to the list
             if(!temp.containsKey(objectStr)) {
                 temp.put(objectStr, "");
                 int index = Integer.parseInt(typeToShapesListIndex.get(objectType).toString());
@@ -115,7 +113,7 @@ public class officer {
     public void printList() {
         for (int i= 0; i < shapes.size(); i++) {
             for (int j= 0; j < shapes.get(i).size(); j++) {
-                System.out.println(classes[i] + " : " + shapes.get(i).get(j).printToString());
+                System.out.println(shapes.get(i).get(j).printToString());
             }
         }
     }
