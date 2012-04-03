@@ -61,6 +61,10 @@ public class specobject {
 
         boolean satisfied = endNode.getSatisfied();
         solved = true;
+        if(satisfied)
+            System.out.println(id + " is satisfied");
+        else
+            System.out.println(id + " is not satisfied");
         return satisfied;
     }
 
