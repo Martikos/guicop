@@ -8,6 +8,7 @@ package guicop;
 
 import geometric.*;
 import parsers.*;
+import structures.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -22,7 +23,6 @@ import org.antlr.stringtemplate.*;
 
 public class officer {
     private ArrayList<specobject> objects;
-
     private HashMap typeToShapesListIndex;
     private ArrayList<ArrayList<shape>> shapes;
     private String[] classes = {"rectangle", "triangle", "ellipse", "line", "polygon", "text", "textrect"};
@@ -58,15 +58,18 @@ public class officer {
         // for each user defined object in file
         for (int i= 0; i < ast.getChildCount(); i++) {
             Tree objectTree = ast.getChild(i);
+            String id = objectTree.getText();
 
             // get variables
-            Tree variablesTree = objectTree.getChild(0);
+            Tree variables = objectTree.getChild(0);
 
             // get properties
             Tree properties = objectTree.getChild(1);
 
             // get constraints
             Tree constraints = objectTree.getChild(2);
+
+            objects.add(new specobject(this, id, variables, properties, constraints));
             
         }
     }
@@ -108,6 +111,64 @@ public class officer {
         temp.clear();
     }
 
+    public void initializeLeafs(node n, ArrayList<variable> instances, HashMap typeMap) {
+        boolean x = n.hasLeft() && n.hasRight();
+        if(n.hasLeft() && n.hasRight())
+        {
+            node left = n.getLeft();
+            node right = n.getRight();
+            initializeLeafs(left, instances, typeMap);
+            initializeLeafs(right, instances, typeMap);
+
+        }
+        else {
+            if(typeMap.containsKey(n.getLabel())) {
+                // the object was declared in the variables section
+                String objectType = typeMap.get(n.getLabel()).toString();
+                String id = n.getLabel();
+                if(typeToShapesListIndex.containsKey(objectType)) {
+                    int index = Integer.parseInt(typeToShapesListIndex.get(objectType).toString());
+                    ArrayList<shape> s = shapes.get(index);
+                    variable v = new variable(id);
+                    for (int i= 0; i < s.size(); i++) {
+                        component c = new component();
+                        c.addShape(s.get(i));
+                        v.addInstance(c);
+                        n.addComponent(c);
+                    }
+                    instances.add(v);
+                }
+            }
+            else {
+                // the object should be another user defined object
+            }
+        }
+    }
+    
+    public boolean check(String str) {
+        System.out.println("Checking for object: " + str);
+        if(objects.size()>0) {
+            boolean check = false;
+            boolean found = false;
+            for(int i=0; i<objects.size(); i++) {
+                if(objects.get(i).getId().equals(str))
+                {
+                    found = true;
+                    specobject n = objects.get(i);
+                    check = n.check();
+                    break;
+                }
+            }
+            if(!found) {
+                System.out.println("Error: Checking for a non defined object.");
+                return false;
+            }
+            else
+                return check;
+        }
+        else
+            return false;
+    }
     public void printList() {
         for (int i= 0; i < shapes.size(); i++) {
             for (int j= 0; j < shapes.get(i).size(); j++) {

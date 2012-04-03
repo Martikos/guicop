@@ -16,7 +16,9 @@ public class Main {
 
         try {
             blart.readSpec(specFile);
-     //       blart.readOut(outFile);
+            blart.readOut(outFile);
+
+            blart.check("object1");
      //       blart.printList();
         } catch (Exception e) {
             e.printStackTrace();

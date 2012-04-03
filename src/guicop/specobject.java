@@ -17,17 +17,24 @@ import org.antlr.runtime.tree.*;
 import org.antlr.stringtemplate.*;
 
 public class specobject {
+
+    private officer blart;
     private HashMap variables;
     private Tree properties;
     private Tree constraints;
 
     private node startNode;
-    
+    ArrayList<variable> instances = new ArrayList();
+
     private String id;
+    private boolean solved;
 
 
-    public specobject(Tree v, Tree p, Tree c) {
+    public specobject(officer o, String ids, Tree v, Tree p, Tree c) {
+        blart = o;
+        id = ids;
         variables = new HashMap();
+        solved = false;
         
         // get variables
         for (int j= 0; j < v.getChildCount(); j++) {
@@ -41,12 +48,23 @@ public class specobject {
         // get properties
         properties = p;
         // get constraints
-        constraints = c;
+        constraints = c.getChild(0);
 
         node n = new node();
         startNode = buildNodeTree(constraints, n);
     }
 
+    public boolean check() {
+        blart.initializeLeafs(startNode, instances, variables);
+        return true;
+    }
+
+    public boolean getSolved() {
+        return solved;
+    }
+    public String getId() {
+        return id;
+    }
     private node buildNodeTree(Tree t, node n) {
         if (!t.isNil()) {
             Tree left, right;
