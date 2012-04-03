@@ -34,7 +34,9 @@ public class checker {
 
     ArrayList<String[]> ops;
 
-    public checker(HashMap typeMap, ArrayList instances) {
+    public checker(HashMap t, ArrayList ins) {
+        instances = ins;
+        typeMap = t;
         tokenMap = new HashMap();
         operationSignMap = new HashMap();
         for(int i=0; i<combineOperators.length; i++)
@@ -76,7 +78,7 @@ public class checker {
                     boolean check = false;
                     Method m;
                     try {
-                        m = specobject.class.getMethod(op, component.class, component.class);
+                        m = checker.class.getMethod(op, component.class, component.class);
                         String str = m.invoke(this, c1, c2).toString();
                         check = str.equals("true");
                     } catch(Exception e) {e.printStackTrace();}
@@ -127,7 +129,7 @@ public class checker {
                     double d3 = 0;
                     Method m;
                     try {
-                        m = specobject.class.getMethod(sign, double.class, double.class);
+                        m = checker.class.getMethod(sign, double.class, double.class);
                         String str = m.invoke(this, d1, d2).toString();
                         d3 = Double.parseDouble(str);
                     } catch(Exception e) {e.printStackTrace();}
@@ -178,15 +180,13 @@ public class checker {
                 String memberVariable = n2.getLabel();
                 String variableName = n1.getLabel();
 
-
-
                 // get the type of the variable from the type map
                 String type = typeMap.get(variableName).toString();
                 // construct the string of the operation, ex: getX() :
                 String getter = "get" + memberVariable.toUpperCase();
                 Method m;
 
-                Class t = Class.forName("classes." + type);
+                Class t = Class.forName("geometric." + type);
                 m = t.getMethod(getter);
 
                 int index = -1;
@@ -411,13 +411,13 @@ public class checker {
     }
     public boolean above(component c1, component c2) {
         boolean check = (c1.getMostBottom() <= c2.getMostTop());
-    //    System.out.println(c1.getMostBottom() + " <= " +  c2.getMostTop() + " : " + check);
+        System.out.println(c1.getMostBottom() + " <= " +  c2.getMostTop() + " : " + check);
         return (c1.getMostBottom() <= c2.getMostTop());
     }
     public boolean below(component c1, component c2) {
-        boolean check = (c1.getMostBottom() <= c2.getMostTop());
-   //     System.out.println(c1.getMostTop() + " > " +  c2.getMostBottom() + " : " + check);
-        return (c1.getMostTop()>c2.getMostBottom());
+        boolean check = (c1.getMostTop() <= c2.getMostBottom());
+        System.out.println(c1.getMostTop() + " <= " +  c2.getMostBottom() + " : " + check);
+        return check;
     }
     public boolean contains(component c1, component c2) {
     //    c1.print();

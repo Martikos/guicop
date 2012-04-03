@@ -20,6 +20,7 @@ import org.antlr.stringtemplate.*;
 public class specobject {
 
     private officer blart;
+    private checker ch;
     private HashMap variables;
     private Tree properties;
     private Tree constraints;
@@ -35,6 +36,7 @@ public class specobject {
         blart = o;
         id = ids;
         variables = new HashMap();
+        
         solved = false;
         
         // get variables
@@ -57,7 +59,7 @@ public class specobject {
 
     public boolean check() {
         blart.initializeLeafs(startNode, instances, variables);
-        checker ch = new checker(variables, instances);
+        ch = new checker(variables, instances);
         endNode = ch.traverse(startNode);
 
         boolean satisfied = endNode.getSatisfied();
@@ -107,83 +109,51 @@ public class specobject {
         return n;
     }
 
-    public int[] getProperties() {
-        int x=0, y=0, width=0, height=0;
-        // each child is a property member variable
+    public node getProperties() {
+
+        HashMap property = new HashMap();
+        String[] ps = {"x", "y", "width", "height"};
+        ArrayList<ArrayList<Integer>> returnList = new ArrayList();
+        for (int i = 0; i < ps.length; i++) {
+            property.put(ps[i], i);
+            returnList.add(new ArrayList());
+        }
+        
+        int minValuesSize = 10000;
         for (int i= 0; i < properties.getChildCount(); i++) {
-            // this is either x, y, width or height
-            Tree propertyTree = properties.getChild(i);
-            String propertyID = propertyTree.getText();
-            int result = 0;
-            for (int j= 0; j<propertyTree.getChildCount(); j++) {
-                // dots and operations
-                Tree property = propertyTree.getChild(j);
-                String text = property.getText();
-                double Result = 0;
-                if (text.equals(".")) {
-                    try {
-                        String nameVariable = property.getChild(0).getText();
-                        String memberVariable = property.getChild(1).getText();
-                        // call dot operator
-                        // get the type of the variable from the type map
-                        String type = variables.get(nameVariable).toString();
-                        // construct the string of the operation, ex: getX() :
-                        String getter = "get" + memberVariable.toUpperCase();
-                        Method m;
-                        Class theClass = Class.forName("geometric." + type);
-                        m = theClass.getMethod(getter);
-                        int index = -1;
-                        for(int fori=0; fori<instances.size(); fori++)
-                            if(instances.get(fori).getId().equals(nameVariable))
-                            {
-                                index = fori;
-                                break;
-                            }
-                        if(index>=0) {
-                            // do logic here
-                            variable var = instances.get(index);
-                            for(int fori=0; fori<var.getinstancesSize(); fori++) {
-                                shape s = var.getShape(fori).getShape(0);
-                                String str = "";
-                                str = m.invoke(s).toString();
-                                Result = Double.parseDouble(str);
-                                if(j==0)
-                                    result += Result;
-                                j++;
-                                if(j<propertyTree.getChildCount()) {
-                                    property = propertyTree.getChild(j);
-                                    text = property.getText();
-                                    if(text.equals("+") || text.equals("-") || text.equals("*") || text.equals("/")) {
-                                                        if(text.equals("+"))
-                                                            result+=Result;
-                                                        else if(text.equals("-"))
-                                                            result-=Result;
-                                                        else if(text.equals("*"))
-                                                            result*=Result;
-                                                        else if(text.equals("/") && Result!=0)
-                                                            result/=Result;
-                                    }
-                                }
-                            }
-                        }
-                    }  catch (Exception e) {e.printStackTrace();}
+            Tree child = properties.getChild(i);
+            for (int j= 0; j < child.getChildCount(); j++) {
+                Tree subChild = child.getChild(j);
+                node n1 = new node();
+                node n2 = buildNodeTree(subChild, n1);
+
+                blart.initializeLeafs(n2, instances, variables);
+                node res = ch.traverse(n2);
+                int num = res.getValuesSize();
+                if(num<minValuesSize)
+                    minValuesSize = num;
+                if(property.containsKey(child.getText().toLowerCase())) {
+                    int index = Integer.parseInt(property.get(child.getText().toLowerCase()).toString());
+                    for (int k= 0; k < minValuesSize; k++) {
+                        returnList.get(index).add((int)res.getValue(k));
+                    }
                 }
-                if(propertyID.equals("x"))
-                    x = result;
-                else if(propertyID.equals("y"))
-                    y = result;
-                else if(propertyID.equals("width"))
-                    width = result;
-                else if(propertyID.equals("height"))
-                    height = result;
             }
         }
-        int[] array = new int[4];
-        array[0] = x;
-        array[1] = y;
-        array[2] = width;
-        array[3] = height;
-        return array;
+        // make sure all lists have size less than minValuesSize
+        node n = new node(id);
+        for (int i= 0; i < minValuesSize; i++) {
+            component c = new component();
+            int x = Integer.parseInt(returnList.get(0).get(i).toString());
+            int y = Integer.parseInt(returnList.get(1).get(i).toString());
+            int width = Integer.parseInt(returnList.get(2).get(i).toString());
+            int height = Integer.parseInt(returnList.get(3).get(i).toString());
+            rectangle r = new rectangle(x, y, width, height);
+            c.addShape(r);
+            n.addComponent(c);
+        }
+        return n;
+        
     }
 
 }

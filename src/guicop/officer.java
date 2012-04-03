@@ -23,6 +23,7 @@ import org.antlr.stringtemplate.*;
 
 public class officer {
     private ArrayList<specobject> objects;
+    private ArrayList<node> solved;
     private HashMap typeToShapesListIndex;
     private ArrayList<ArrayList<shape>> shapes;
     private String[] classes = {"rectangle", "triangle", "ellipse", "line", "polygon", "text", "textrect"};
@@ -30,6 +31,7 @@ public class officer {
     public officer() {
         objects = new ArrayList();
         shapes = new ArrayList();
+        solved = new ArrayList();
         for (int i= 0; i < classes.length; i++) {
             shapes.add(new ArrayList());
         }
@@ -141,6 +143,35 @@ public class officer {
             }
             else {
                 // the object should be another user defined object
+
+                // see if it has already been checked
+                boolean alreadyChecked = false;
+                String currentId = n.getLabel();
+                for (int i= 0; i < solved.size(); i++) {
+                    if(currentId.equals(solved.get(i).getLabel())) {
+                        n = solved.get(i);
+                        alreadyChecked = true;
+                    }
+                }
+                // if it has not yet been check, check it
+                boolean savedToCheck = false;
+                if(!alreadyChecked) {
+                    for (int i= 0; i < objects.size(); i++) {
+                        if(currentId.equals(objects.get(i).getId())) {
+                            specobject speco = objects.get(i);
+                            boolean checko = speco.check();
+                            node n2 = speco.getProperties();
+                            for (int j= 0; j < n2.getCardinal(); j++) {
+                                n.addComponent(n2.getComponent(j));
+                            }
+                            savedToCheck = true;
+                        }
+                    }
+                }
+                // if it has not been checked and is not even in the list of objects to check, throw an error
+                if(!alreadyChecked && !savedToCheck)
+                    if(!currentId.equals("x") && !currentId.equals("y") && !currentId.equals("width") && !currentId.equals("height"))
+                        System.out.println("object '" + currentId + "' does not exist");
             }
         }
     }
@@ -156,18 +187,34 @@ public class officer {
                     found = true;
                     specobject n = objects.get(i);
                     check = n.check();
+                    node n2 = n.getProperties();
+                    // remove objects from specobjects
+                    objects.remove(i);
+                    // add it's node to list of solved nodes
+                    solved.add(n2);
                     break;
                 }
             }
             if(!found) {
+                // check list of solved objects
+                for (int i= 0; i < solved.size(); i++) {
+                    String solvedId = solved.get(i).getLabel();
+                    if(solvedId.equals(str)) {
+                        return solved.get(i).getSatisfied();
+                    }
+                }
                 System.out.println("Error: Checking for a non defined object.");
                 return false;
+                
             }
             else
                 return check;
+
+                
         }
         else
             return false;
+
     }
     public void printList() {
         for (int i= 0; i < shapes.size(); i++) {
