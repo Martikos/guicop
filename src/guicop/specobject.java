@@ -23,7 +23,7 @@ public class specobject {
     private Tree properties;
     private Tree constraints;
 
-    private node startNode;
+    private node startNode, endNode;
     ArrayList<variable> instances = new ArrayList();
 
     private String id;
@@ -56,7 +56,12 @@ public class specobject {
 
     public boolean check() {
         blart.initializeLeafs(startNode, instances, variables);
-        return true;
+        checker ch = new checker(variables, instances);
+        endNode = ch.traverse(startNode);
+
+        boolean satisfied = endNode.getSatisfied();
+        solved = true;
+        return satisfied;
     }
 
     public boolean getSolved() {
