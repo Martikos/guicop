@@ -9,6 +9,7 @@ package guicop;
 import geometric.*;
 import structures.*;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -104,6 +105,85 @@ public class specobject {
             n.setLabel(t.getText());
         }
         return n;
+    }
+
+    public int[] getProperties() {
+        int x=0, y=0, width=0, height=0;
+        // each child is a property member variable
+        for (int i= 0; i < properties.getChildCount(); i++) {
+            // this is either x, y, width or height
+            Tree propertyTree = properties.getChild(i);
+            String propertyID = propertyTree.getText();
+            int result = 0;
+            for (int j= 0; j<propertyTree.getChildCount(); j++) {
+                // dots and operations
+                Tree property = propertyTree.getChild(j);
+                String text = property.getText();
+                double Result = 0;
+                if (text.equals(".")) {
+                    try {
+                        String nameVariable = property.getChild(0).getText();
+                        String memberVariable = property.getChild(1).getText();
+                        // call dot operator
+                        // get the type of the variable from the type map
+                        String type = variables.get(nameVariable).toString();
+                        // construct the string of the operation, ex: getX() :
+                        String getter = "get" + memberVariable.toUpperCase();
+                        Method m;
+                        Class theClass = Class.forName("geometric." + type);
+                        m = theClass.getMethod(getter);
+                        int index = -1;
+                        for(int fori=0; fori<instances.size(); fori++)
+                            if(instances.get(fori).getId().equals(nameVariable))
+                            {
+                                index = fori;
+                                break;
+                            }
+                        if(index>=0) {
+                            // do logic here
+                            variable var = instances.get(index);
+                            for(int fori=0; fori<var.getinstancesSize(); fori++) {
+                                shape s = var.getShape(fori).getShape(0);
+                                String str = "";
+                                str = m.invoke(s).toString();
+                                Result = Double.parseDouble(str);
+                                if(j==0)
+                                    result += Result;
+                                j++;
+                                if(j<propertyTree.getChildCount()) {
+                                    property = propertyTree.getChild(j);
+                                    text = property.getText();
+                                    if(text.equals("+") || text.equals("-") || text.equals("*") || text.equals("/")) {
+                                                        if(text.equals("+"))
+                                                            result+=Result;
+                                                        else if(text.equals("-"))
+                                                            result-=Result;
+                                                        else if(text.equals("*"))
+                                                            result*=Result;
+                                                        else if(text.equals("/") && Result!=0)
+                                                            result/=Result;
+                                    }
+                                }
+                            }
+                        }
+                    }  catch (Exception e) {e.printStackTrace();}
+                }
+                if(propertyID.equals("x"))
+                    x = result;
+                else if(propertyID.equals("y"))
+                    y = result;
+                else if(propertyID.equals("width"))
+                    width = result;
+                else if(propertyID.equals("height"))
+                    height = result;
+            }
+        }
+        int[] array = new int[4];
+        array[0] = x;
+        array[1] = y;
+        array[2] = width;
+        array[3] = height;
+        return array;
     }
 
 }
