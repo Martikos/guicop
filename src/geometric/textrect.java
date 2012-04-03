@@ -8,45 +8,50 @@ package geometric;
 
 public class textrect extends shape {
 
-    private double x, y, width, height;
+    private int x, y, width, height;
     private String str;
 
-    public textrect(double X, double Y, double W, double H, String STR) {
+    public textrect(){}
+    public textrect(int X, int Y, int W, int H, String STR) {
         x = X;
         y = Y;
         width = W;
         height = H;
         str = STR;
     }
-    public double getX() {
+    public int getX() {
         return x;
     }
-    public double getY() {
+    public int getY() {
         return y;
     }
-    public double getWIDTH() {
+    public int getWIDTH() {
         return width;
     }
-    public double getHEIGHT() {
+    public int getHEIGHT() {
         return height;
     }
     public String getSTRING() {
         return str;
     }
-    public double getLeftBound() {
+    public int getLeftBound() {
         return x;
     }
-    public double getRightBound() {
+    public int getRightBound() {
         return x + width;
     }
-    public double getTopBound() {
+    public int getTopBound() {
         return y;
     }
-    public double getBottomBound() {
+    public int getBottomBound() {
         return y + height;
     }
-    public double getSize() {
+    public int getSize() {
         return width*height;
+    }
+
+    public void fromString(String objectString) {
+
     }
     public void print() {
         System.out.println("textrect(" + x + "," + y + "," + width + "," + height + "," + str + ")");

@@ -9,6 +9,7 @@ package geometric;
 public class line extends shape {
     private double x1, y1, x2, y2;
 
+    public line(){}
     public line(double X1, double Y1, double X2, double Y2) {
         x1 = X1;
         y1 = Y1;
@@ -55,7 +56,10 @@ public class line extends shape {
     public double getSize() {
         return 0;
     }
-    
+
+    public void fromString(String objectString) {
+
+    }
     public void print() {
         System.out.println("line(" + x1 + ","+ y1 + "," + x2 + "," + y2 + ")");
     }

@@ -7,47 +7,57 @@
 package geometric;
 
 public class rectangle extends shape {
-    private double x, y, width, height;
+    private int x, y, width, height;
 
-    public rectangle(double X, double Y, double Width, double Height) {
+    public rectangle() {}
+    public rectangle(int X, int Y, int Width, int Height) {
         x = X;
         y = Y;
         width = Width;
         height = Height;
     }
 
-    public double getX() {
+    public int getX() {
         return x;
     }
-    public double getY() {
+    public int getY() {
         return y;
     }
-    public double getWIDTH() {
+    public int getWIDTH() {
         return width;
     }
-    public double getHEIGHT() {
+    public int getHEIGHT() {
         return height;
     }
-    public double getLeftBound() {
+    public int getLeftBound() {
         return x;
     }
-    public double getRightBound() {
+    public int getRightBound() {
         return x+width;
     }
-    public double getTopBound() {
+    public int getTopBound() {
         return y;
     }
-    public double getBottomBound() {
+    public int getBottomBound() {
         return y+width;
     }
-    public double getSize() {
+    public int getSize() {
         return width*height;
     }
 
     public boolean equals(rectangle r) {
         return (x==r.x && y==r.y && width==r.width && height==r.height);
     }
+    
+    public void fromString(String objectString) {
+        String arguments = objectString.substring(objectString.indexOf("(")+1, objectString.indexOf(")")-1);
+        String[] params = arguments.split(",");
+        x = Integer.parseInt(params[0]);
+        y = Integer.parseInt(params[1]);
+        width = Integer.parseInt(params[2]);
+        height = Integer.parseInt(params[3]);
 
+    }
     public void print() {
         System.out.println("rectangle(" + x + " " + y + " " + width + " " + height + ")");
     }

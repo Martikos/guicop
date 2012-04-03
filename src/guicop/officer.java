@@ -6,19 +6,23 @@
  */
 package guicop;
 
+import geometric.*;
 import parsers.*;
 
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.lang.reflect.Method;
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
 import org.antlr.stringtemplate.*;
 
+
 public class officer {
     private ArrayList<specobject> objects;
+    private ArrayList<shape> shapes;
 
     public officer() {
         objects = new ArrayList();
@@ -52,4 +56,34 @@ public class officer {
         }
 
     }
+
+
+    public void readOut (String filePath) throws Exception {
+        ANTLRReaderStream in = new ANTLRReaderStream(new FileReader(filePath));
+        outLexer lexer = new outLexer(in);
+	CommonTokenStream tokens = new CommonTokenStream(lexer);
+	outParser parser = new outParser(tokens);
+	outParser.listofproperties_return result = parser.listofproperties();
+	Tree ast = (Tree)result.getTree();
+
+        for (int i= 0; i < ast.getChildCount(); i++) {
+            Tree subAst = ast.getChild(i);
+            String objectType = subAst.getText();
+            String objectStr = objectType + "(";
+            for (int j= 0; j < subAst.getChildCount(); j++) {
+                if(j>0)
+                    objectStr += ",";
+                objectStr += subAst.getChild(j).getText();
+            }
+            objectStr+= ")";
+            Class theClass = Class.forName("geometric." + objectType);
+
+            Object obj = theClass.getConstructors()[0].newInstance();
+            shape newShape = (shape)obj;
+            newShape.fromString(objectStr);
+            newShape.print();
+            
+        }
+    }
+
 }

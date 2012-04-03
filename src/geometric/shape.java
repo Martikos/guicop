@@ -7,11 +7,13 @@
 package geometric;
 
 public abstract class shape {
-    abstract public double getLeftBound();
-    abstract public double getRightBound();
-    abstract public double getTopBound();
-    abstract public double getBottomBound();
-    abstract public double getSize();
+    abstract public int getLeftBound();
+    abstract public int getRightBound();
+    abstract public int getTopBound();
+    abstract public int getBottomBound();
+    abstract public int getSize();
+
+    abstract public void fromString(String objectString);
     abstract public void print();
     abstract public String printToString();
 }

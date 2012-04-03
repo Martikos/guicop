@@ -8,47 +8,51 @@ package geometric;
 import java.util.ArrayList;
 
 public class polygon extends shape {
-    private ArrayList<Double> x;
-    private ArrayList<Double> y;
+    private ArrayList<Integer> x;
+    private ArrayList<Integer> y;
 
+    public polygon() {}
     public polygon(ArrayList xs, ArrayList ys) {
         x = xs;
         y = ys;
     }
 
-    public double getSize() {
+    public int getSize() {
         return x.size();
     }
-    public double getLeftBound() {
-        Double first = x.get(0);
+    public int getLeftBound() {
+        int first = x.get(0);
         for(int i=0; i<x.size(); i++)
             if(x.get(i)<first)
                 first=x.get(i);
         return first;
 
     }
-    public double getRightBound(){
-        Double first = x.get(0);
+    public int getRightBound(){
+        int first = x.get(0);
         for(int i=0; i<x.size(); i++)
             if(x.get(i)>first)
                 first=x.get(i);
         return first;
     }
-    public double getTopBound() {
-        Double first = y.get(0);
+    public int getTopBound() {
+        int first = y.get(0);
         for(int i=0; i<y.size(); i++)
             if(y.get(i)<first)
                 first=y.get(i);
         return first;
     }
-    public double getBottomBound(){
-        Double first = y.get(0);
+    public int getBottomBound(){
+        int first = y.get(0);
         for(int i=0; i<y.size(); i++)
             if(y.get(i)>first)
                 first=y.get(i);
         return first;
     }
+    
+    public void fromString(String objectString) {
 
+    }
     public void print() {
         System.out.print("(");
         for(int i=0; i<x.size(); i++) {

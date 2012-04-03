@@ -7,45 +7,50 @@
 package geometric;
 
 public class ellipse extends shape {
-    private double x, y, width, height;
+    private int x, y, width, height;
 
-    public ellipse(double X, double Y, double Width, double Height) {
+    public ellipse(){}
+    public ellipse(int X, int Y, int Width, int Height) {
         x = X;
         y=  Y;
         width = Width;
         height = Height;
     }
-    public double getX() {
+    public int getX() {
         return x;
     }
-    public double getY() {
+    public int getY() {
         return y;
     }
-    public double getWIDTH() {
+    public int getWIDTH() {
         return width;
     }
-    public double getHEIGHT() {
+    public int getHEIGHT() {
         return height;
     }
 
-    public double getLeftBound() {
+    public int getLeftBound() {
         return x;
     }
-    public double getRightBound() {
+    public int getRightBound() {
         return x+width;
     }
-    public double getTopBound() {
+    public int getTopBound() {
         return y;
     }
-    public double getBottomBound() {
+    public int getBottomBound() {
         return y+width;
     }
-    public double getSize() {
+    public int getSize() {
         return (width*height);
     }
 
     public boolean equals(ellipse e) {
         return (x==e.getX() && y==e.getY() && width==e.getWIDTH() && height==e.getHEIGHT());
+    }
+
+    public void fromString(String objectString) {
+
     }
     public void print() {
         System.out.println("ellipse(" + x + " " + y + " " + width + " " + height + ")");

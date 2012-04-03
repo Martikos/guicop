@@ -8,10 +8,11 @@ package geometric;
 
 public class text extends shape {
 
-    private double x, y;
+    private int x, y;
     private String str;
 
-    public text(String t, double xx, double yy) {
+    public text(){}
+    public text(String t, int xx, int yy) {
         str = t;
         x = xx;
         y = yy;
@@ -19,20 +20,24 @@ public class text extends shape {
     public String getText() {
         return str;
     }
-    public double getLeftBound() {
+    public int getLeftBound() {
         return x;
     }
-    public double getRightBound() {
+    public int getRightBound() {
         return x + str.length()*5;
     }
-    public double getTopBound() {
+    public int getTopBound() {
         return y;
     }
-    public double getBottomBound() {
+    public int getBottomBound() {
         return y + 10;
     }
-    public double getSize() {
+    public int getSize() {
         return (this.getLeftBound() - this.getRightBound())*(this.getBottomBound()-this.getTopBound());
+    }
+
+    public void fromString(String objectString) {
+
     }
     public void print() {
         System.out.println("text(" + x + "," + y + "," + str + ")");
