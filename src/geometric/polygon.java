@@ -51,7 +51,12 @@ public class polygon extends shape {
     }
     
     public void fromString(String objectString) {
-
+        String arguments = objectString.substring(objectString.indexOf("(")+1, objectString.indexOf(")"));
+        String[] params = arguments.split(",");
+        for(int i=0; i<params.length; i+=2) {
+            x.add(Integer.parseInt(params[i]));
+            y.add(Integer.parseInt(params[i+1]));
+        }
     }
     public void print() {
         System.out.print("(");

@@ -79,6 +79,14 @@ public class triangle extends shape{
     }
 
     public void fromString(String objectString) {
+        String arguments = objectString.substring(objectString.indexOf("(")+1, objectString.indexOf(")"));
+        String[] params = arguments.split(",");
+        x1 = Integer.parseInt(params[0]);
+        y1 = Integer.parseInt(params[1]);
+        x2 = Integer.parseInt(params[2]);
+        y2 = Integer.parseInt(params[3]);
+        x3 = Integer.parseInt(params[4]);
+        y3 = Integer.parseInt(params[5]);
 
     }
     public void print() {

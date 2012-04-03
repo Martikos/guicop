@@ -50,7 +50,12 @@ public class ellipse extends shape {
     }
 
     public void fromString(String objectString) {
-
+        String arguments = objectString.substring(objectString.indexOf("(")+1, objectString.indexOf(")"));
+        String[] params = arguments.split(",");
+        x = Integer.parseInt(params[0]);
+        y = Integer.parseInt(params[1]);
+        width = Integer.parseInt(params[2]);
+        height = Integer.parseInt(params[3]);
     }
     public void print() {
         System.out.println("ellipse(" + x + " " + y + " " + width + " " + height + ")");

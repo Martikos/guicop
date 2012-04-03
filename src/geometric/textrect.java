@@ -51,7 +51,13 @@ public class textrect extends shape {
     }
 
     public void fromString(String objectString) {
-
+        String arguments = objectString.substring(objectString.indexOf("(")+1, objectString.indexOf(")"));
+        String[] params = arguments.split(",");
+        x = Integer.parseInt(params[0]);
+        y = Integer.parseInt(params[1]);
+        width = Integer.parseInt(params[2]);
+        height = Integer.parseInt(params[3]);
+        str = params[4];
     }
     public void print() {
         System.out.println("textrect(" + x + "," + y + "," + width + "," + height + "," + str + ")");
