@@ -70,8 +70,6 @@ public class officer {
             
         }
     }
-
-
     public void readOut (String filePath) throws Exception {
         ANTLRReaderStream in = new ANTLRReaderStream(new FileReader(filePath));
         outLexer lexer = new outLexer(in);

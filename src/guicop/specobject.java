@@ -7,6 +7,7 @@
 package guicop;
 
 import geometric.*;
+import structures.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,8 @@ public class specobject {
     private HashMap variables;
     private Tree properties;
     private Tree constraints;
+
+    private node startNode;
     
     private String id;
 
@@ -39,5 +42,41 @@ public class specobject {
         properties = p;
         // get constraints
         constraints = c;
+
+        node n = new node();
+        startNode = buildNodeTree(constraints, n);
     }
+
+    private node buildNodeTree(Tree t, node n) {
+        if (!t.isNil()) {
+            Tree left, right;
+            boolean isLeaf_left=true, isLeaf_right = true;
+            node newLeft, newRight;
+            if(t.getChildCount()>0) {
+                if(!t.getChild(0).isNil()) {
+                    String str = t.getChild(0).getText();
+                    left = t.getChild(0);
+                    isLeaf_left = (left.getChildCount()==0);
+                    newLeft = new node(left.getText());
+                    if(!isLeaf_left)
+                        n.setLeft(buildNodeTree(left,newLeft));
+                    else
+                        n.setLeft(new node(left.getText()));
+                }
+                if(!t.getChild(1).isNil()) {
+                    String str = t.getChild(1).getText();
+                    right = t.getChild(1);
+                    isLeaf_right = (right.getChildCount()==0);
+                    newRight = new node(right.getText());
+                    if(!isLeaf_right)
+                        n.setRight(buildNodeTree(right,newRight));
+                    else
+                        n.setRight(new node(right.getText()));
+                }
+            }
+            n.setLabel(t.getText());
+        }
+        return n;
+    }
+
 }
