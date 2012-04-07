@@ -1,0 +1,66 @@
+object1 = {
+	variables {
+		rectangle r1, r2, r3;
+		line l1, l2, l3;
+		triangle tr2, tr3;
+		ellipse e1, e2, e3;
+		polygon p1, p2;
+		text t1;
+		object2 oo;
+	}
+	properties {
+		X = r1.x-r2.x;
+		Y = r1.y-r2.y;
+		WIDTH = r1.width;
+		HEIGHT = r1.height;
+	}
+	constraints {
+		(r1 below object2);
+	}
+}
+object2 = {
+	variables {
+		rectangle r1, r2, r3;
+		triangle tr2, tr3;
+		ellipse e1, e2, e3;
+		polygon p1, p2;
+		text t1;
+	}
+	properties {
+		X = r1.width-r1.height;
+		Y = r1.width-r2.height;
+		WIDTH = r1.x;
+		HEIGHT = r1.x;
+	}
+	constraints {
+		(r1 below r2);
+	}
+}
+button = {
+	variables {
+		line l1, l2, l3, l4;
+	}
+	properties {
+		X = l1.x1;
+		Y = l1.y1;
+		WIDTH = l1.x2-l1.x1;
+		HEIGHT = l2.y2-l2.y1;
+	}
+	constraints {
+		(((l1 above l3) and (l2 leftto l4)) and (l1.x1 == l2.x1));
+	}
+}
+
+calculator = {
+	variables {
+		button b1, b2, b3, b4, b5, b6, b7, b8, b9, b11;
+	}
+	properties {
+		X = b1.x;
+		Y = b1.y;
+		WIDTH = b1.width;
+		HEIGHT = b1.height;
+	}
+	constraints {
+		((b1 leftto b2) leftto b3);
+	}
