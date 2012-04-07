@@ -1,24 +1,11 @@
-/**
- * @author M4rc Adam
- * Department of Electrical and Computer Engineering
- * Faculty of Engineering and Architecture
- * American University of Beirut
- */
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g 2012-04-07 03:35:42
 package parsers;
-
 import org.antlr.runtime.*;
 import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
 
 public class specLexer extends Lexer {
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
     public static final int OPERATOR=4;
     public static final int T__22=22;
     public static final int T__21=21;
@@ -27,13 +14,12 @@ public class specLexer extends Lexer {
     public static final int INT=6;
     public static final int ID=7;
     public static final int EOF=-1;
-    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int T__16=16;
     public static final int WS=8;
+    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
     public static final int NEWLINE=10;
+    public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int PROPERTY=5;
@@ -59,11 +45,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:3:7: ( 'rectangle' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:3:9: 'rectangle'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:3:7: ( '.' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:3:9: '.'
             {
-            match("rectangle");
-
+            match('.');
 
             }
 
@@ -80,11 +65,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:4:7: ( 'line' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:4:9: 'line'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:4:7: ( ',' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:4:9: ','
             {
-            match("line");
-
+            match(',');
 
             }
 
@@ -101,11 +85,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:5:7: ( 'triangle' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:5:9: 'triangle'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:5:7: ( ';' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:5:9: ';'
             {
-            match("triangle");
-
+            match(';');
 
             }
 
@@ -122,11 +105,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:6:7: ( 'ellipse' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:6:9: 'ellipse'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:6:7: ( '=' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:6:9: '='
             {
-            match("ellipse");
-
+            match('=');
 
             }
 
@@ -143,11 +125,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:7:7: ( 'polygon' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:7:9: 'polygon'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:7:7: ( '(' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:7:9: '('
             {
-            match("polygon");
-
+            match('(');
 
             }
 
@@ -164,11 +145,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:8:7: ( 'text' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:8:9: 'text'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:8:7: ( ')' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:8:9: ')'
             {
-            match("text");
-
+            match(')');
 
             }
 
@@ -185,11 +165,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:9:7: ( 'textrect' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:9:9: 'textrect'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:9:7: ( '\\\"' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:9:9: '\\\"'
             {
-            match("textrect");
-
+            match('\"');
 
             }
 
@@ -206,11 +185,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:10:7: ( 'polyline' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:10:9: 'polyline'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:10:7: ( '{' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:10:9: '{'
             {
-            match("polyline");
-
+            match('{');
 
             }
 
@@ -227,10 +205,10 @@ public class specLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:11:7: ( '.' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:11:9: '.'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:11:7: ( '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:11:9: '}'
             {
-            match('.');
+            match('}');
 
             }
 
@@ -247,10 +225,11 @@ public class specLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:12:7: ( ',' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:12:9: ','
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:12:7: ( 'variables' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:12:9: 'variables'
             {
-            match(',');
+            match("variables");
+
 
             }
 
@@ -267,10 +246,11 @@ public class specLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:13:7: ( ';' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:13:9: ';'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:13:7: ( 'properties' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:13:9: 'properties'
             {
-            match(';');
+            match("properties");
+
 
             }
 
@@ -287,170 +267,8 @@ public class specLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:14:7: ( '=' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:14:9: '='
-            {
-            match('=');
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__22"
-
-    // $ANTLR start "T__23"
-    public final void mT__23() throws RecognitionException {
-        try {
-            int _type = T__23;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:15:7: ( '(' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:15:9: '('
-            {
-            match('(');
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__23"
-
-    // $ANTLR start "T__24"
-    public final void mT__24() throws RecognitionException {
-        try {
-            int _type = T__24;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:16:7: ( ')' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:16:9: ')'
-            {
-            match(')');
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__24"
-
-    // $ANTLR start "T__25"
-    public final void mT__25() throws RecognitionException {
-        try {
-            int _type = T__25;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:17:7: ( '\\\"' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:17:9: '\\\"'
-            {
-            match('\"');
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__25"
-
-    // $ANTLR start "T__26"
-    public final void mT__26() throws RecognitionException {
-        try {
-            int _type = T__26;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:18:7: ( '{' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:18:9: '{'
-            {
-            match('{');
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__26"
-
-    // $ANTLR start "T__27"
-    public final void mT__27() throws RecognitionException {
-        try {
-            int _type = T__27;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:19:7: ( '}' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:19:9: '}'
-            {
-            match('}');
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__27"
-
-    // $ANTLR start "T__28"
-    public final void mT__28() throws RecognitionException {
-        try {
-            int _type = T__28;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:20:7: ( 'variables' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:20:9: 'variables'
-            {
-            match("variables");
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__28"
-
-    // $ANTLR start "T__29"
-    public final void mT__29() throws RecognitionException {
-        try {
-            int _type = T__29;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:21:7: ( 'properties' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:21:9: 'properties'
-            {
-            match("properties");
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__29"
-
-    // $ANTLR start "T__30"
-    public final void mT__30() throws RecognitionException {
-        try {
-            int _type = T__30;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:22:7: ( 'constraints' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:22:9: 'constraints'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:14:7: ( 'constraints' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:14:9: 'constraints'
             {
             match("constraints");
 
@@ -463,7 +281,7 @@ public class specLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__30"
+    // $ANTLR end "T__22"
 
     // $ANTLR start "OPERATOR"
     public final void mOPERATOR() throws RecognitionException {
@@ -668,7 +486,7 @@ public class specLexer extends Lexer {
         try {
             int _type = PROPERTY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:58:9: ( 'X' | 'Y' | 'WIDTH' | 'HEIGHT' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:48:9: ( 'X' | 'Y' | 'WIDTH' | 'HEIGHT' )
             int alt2=4;
             switch ( input.LA(1) ) {
             case 'X':
@@ -700,21 +518,21 @@ public class specLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:58:11: 'X'
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:48:11: 'X'
                     {
                     match('X');
 
                     }
                     break;
                 case 2 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:59:4: 'Y'
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:49:4: 'Y'
                     {
                     match('Y');
 
                     }
                     break;
                 case 3 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:60:4: 'WIDTH'
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:50:4: 'WIDTH'
                     {
                     match("WIDTH");
 
@@ -722,7 +540,7 @@ public class specLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:61:4: 'HEIGHT'
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:51:4: 'HEIGHT'
                     {
                     match("HEIGHT");
 
@@ -744,10 +562,10 @@ public class specLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:66:5: ( ( '1' .. '9' )+ )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:66:7: ( '1' .. '9' )+
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:56:5: ( ( '1' .. '9' )+ )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:56:7: ( '1' .. '9' )+
             {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:66:7: ( '1' .. '9' )+
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:56:7: ( '1' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -761,7 +579,7 @@ public class specLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:66:8: '1' .. '9'
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:56:8: '1' .. '9'
             	    {
             	    matchRange('1','9');
 
@@ -793,8 +611,8 @@ public class specLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:70:4: ( ( 'a' .. 'z' | '\\_' ) ( 'a' .. 'z' | '0' .. '9' | '\\_' )* )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:70:6: ( 'a' .. 'z' | '\\_' ) ( 'a' .. 'z' | '0' .. '9' | '\\_' )*
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:60:4: ( ( 'a' .. 'z' | '\\_' ) ( 'a' .. 'z' | '0' .. '9' | '\\_' )* )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:60:6: ( 'a' .. 'z' | '\\_' ) ( 'a' .. 'z' | '0' .. '9' | '\\_' )*
             {
             if ( input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -805,7 +623,7 @@ public class specLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:70:22: ( 'a' .. 'z' | '0' .. '9' | '\\_' )*
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:60:22: ( 'a' .. 'z' | '0' .. '9' | '\\_' )*
             loop4:
             do {
                 int alt4=2;
@@ -854,8 +672,8 @@ public class specLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:74:4: ( ' ' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:74:6: ' '
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:64:4: ( ' ' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:64:6: ' '
             {
             match(' ');
 
@@ -874,8 +692,8 @@ public class specLexer extends Lexer {
         try {
             int _type = TAB;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:77:5: ( '\\t' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:77:7: '\\t'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:67:5: ( '\\t' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:67:7: '\\t'
             {
             match('\t');
 
@@ -894,8 +712,8 @@ public class specLexer extends Lexer {
         try {
             int _type = NEWLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:80:9: ( '\\n' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:80:11: '\\n'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:70:9: ( '\\n' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:70:11: '\\n'
             {
             match('\n');
 
@@ -910,8 +728,8 @@ public class specLexer extends Lexer {
     // $ANTLR end "NEWLINE"
 
     public void mTokens() throws RecognitionException {
-        // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | OPERATOR | PROPERTY | INT | ID | WS | TAB | NEWLINE )
-        int alt5=27;
+        // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | OPERATOR | PROPERTY | INT | ID | WS | TAB | NEWLINE )
+        int alt5=19;
         alt5 = dfa5.predict(input);
         switch (alt5) {
             case 1 :
@@ -999,105 +817,49 @@ public class specLexer extends Lexer {
                 }
                 break;
             case 13 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:82: T__23
-                {
-                mT__23();
-
-                }
-                break;
-            case 14 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:88: T__24
-                {
-                mT__24();
-
-                }
-                break;
-            case 15 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:94: T__25
-                {
-                mT__25();
-
-                }
-                break;
-            case 16 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:100: T__26
-                {
-                mT__26();
-
-                }
-                break;
-            case 17 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:106: T__27
-                {
-                mT__27();
-
-                }
-                break;
-            case 18 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:112: T__28
-                {
-                mT__28();
-
-                }
-                break;
-            case 19 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:118: T__29
-                {
-                mT__29();
-
-                }
-                break;
-            case 20 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:124: T__30
-                {
-                mT__30();
-
-                }
-                break;
-            case 21 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:130: OPERATOR
+                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:82: OPERATOR
                 {
                 mOPERATOR();
 
                 }
                 break;
-            case 22 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:139: PROPERTY
+            case 14 :
+                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:91: PROPERTY
                 {
                 mPROPERTY();
 
                 }
                 break;
-            case 23 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:148: INT
+            case 15 :
+                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:100: INT
                 {
                 mINT();
 
                 }
                 break;
-            case 24 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:152: ID
+            case 16 :
+                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:104: ID
                 {
                 mID();
 
                 }
                 break;
-            case 25 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:155: WS
+            case 17 :
+                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:107: WS
                 {
                 mWS();
 
                 }
                 break;
-            case 26 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:158: TAB
+            case 18 :
+                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:110: TAB
                 {
                 mTAB();
 
                 }
                 break;
-            case 27 :
-                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:162: NEWLINE
+            case 19 :
+                // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:1:114: NEWLINE
                 {
                 mNEWLINE();
 
@@ -1209,165 +971,161 @@ public class specLexer extends Lexer {
         }
     }
     static final String DFA5_eotS =
-        "\1\uffff\5\31\3\uffff\1\50\5\uffff\7\31\7\uffff\12\31\2\uffff\7"+
-        "\31\1\26\17\31\1\26\4\31\1\26\2\31\1\132\2\31\1\141\12\31\1\26\3"+
-        "\31\1\uffff\6\31\1\uffff\10\31\2\26\5\31\1\26\21\31\1\26\10\31\1"+
-        "\u009e\1\u009f\6\31\1\26\3\31\1\u00a9\1\u00aa\4\31\2\uffff\1\u00af"+
-        "\3\31\1\26\1\31\1\u00b4\2\31\2\uffff\4\31\1\uffff\1\31\1\u00bc\2"+
-        "\31\1\uffff\5\31\1\26\1\u00c4\1\uffff\3\31\1\26\1\31\1\26\1\31\1"+
-        "\uffff\1\u00ca\1\31\1\26\2\31\1\uffff\1\31\1\26\1\31\1\26\1\31\1"+
-        "\26";
+        "\4\uffff\1\35\5\uffff\13\30\11\uffff\12\30\1\25\12\30\1\25\6\30"+
+        "\1\25\11\30\1\25\12\30\2\25\11\30\1\25\16\30\1\25\2\30\1\25\7\30"+
+        "\1\25\7\30\1\u0086\11\30\1\uffff\1\u0090\4\30\1\25\3\30\1\uffff"+
+        "\1\u0098\1\25\3\30\1\25\1\30\1\uffff\1\25\3\30\2\25\2\30\1\25";
     static final String DFA5_eofS =
-        "\u00d1\uffff";
+        "\u00a2\uffff";
     static final String DFA5_minS =
-        "\1\11\3\145\1\154\1\157\3\uffff\1\75\5\uffff\1\141\1\157\1\142\1"+
-        "\145\1\162\1\155\1\157\7\uffff\1\143\1\147\1\156\1\146\1\151\1\170"+
-        "\1\160\2\154\1\157\2\uffff\1\162\1\156\1\157\1\144\1\154\1\164\1"+
-        "\145\1\60\1\141\1\162\1\164\1\150\1\145\1\164\1\141\1\164\1\141"+
-        "\1\151\1\171\1\160\1\151\1\163\1\166\1\60\1\157\1\164\1\162\1\154"+
-        "\1\60\1\141\1\164\1\60\1\141\1\156\1\60\1\154\1\160\1\147\1\145"+
-        "\1\141\1\164\1\141\1\145\1\167\1\157\1\60\1\154\1\156\1\141\1\uffff"+
-        "\1\157\1\154\1\147\1\145\1\155\1\157\1\uffff\1\151\1\163\1\157\1"+
-        "\151\1\162\1\142\1\162\1\151\2\60\1\155\1\145\1\147\1\157\1\154"+
-        "\1\60\1\151\1\154\1\143\1\142\1\141\1\156\1\147\1\145\2\156\1\164"+
-        "\1\154\1\141\1\156\1\141\1\162\1\154\1\60\1\151\1\147\1\145\1\164"+
-        "\1\163\1\154\1\143\1\156\2\60\1\145\1\151\1\145\1\151\1\163\1\154"+
-        "\1\60\1\145\1\147\1\156\2\60\1\164\1\154\1\141\1\145\2\uffff\1\60"+
-        "\1\145\1\163\1\156\1\60\1\151\1\60\1\156\1\145\2\uffff\1\162\1\145"+
-        "\1\164\1\144\1\uffff\1\163\1\60\1\164\1\147\1\uffff\1\145\1\144"+
-        "\1\151\1\162\1\145\2\60\1\uffff\1\163\1\156\1\144\1\60\1\156\1\60"+
-        "\1\156\1\uffff\1\60\1\145\1\60\1\147\1\141\1\uffff\1\144\1\60\1"+
-        "\164\1\60\1\145\1\60";
+        "\1\11\3\uffff\1\75\5\uffff\1\141\1\162\1\157\1\145\1\151\1\142\1"+
+        "\145\1\162\1\155\1\145\1\157\11\uffff\1\162\1\157\1\156\1\146\1"+
+        "\147\1\157\1\144\1\154\1\164\1\145\1\60\1\141\1\160\1\170\1\162"+
+        "\1\151\1\160\1\163\1\164\1\150\1\166\1\60\1\157\1\164\1\162\1\154"+
+        "\1\141\1\164\1\60\1\141\1\145\1\164\2\141\1\164\1\145\1\167\1\157"+
+        "\1\60\2\154\1\143\1\142\2\162\1\151\1\157\1\154\1\141\2\60\1\155"+
+        "\1\145\1\151\1\155\1\157\1\154\1\164\1\141\1\156\1\60\1\151\1\157"+
+        "\1\154\1\141\1\162\1\147\1\142\1\141\1\156\1\145\2\151\1\163\1\147"+
+        "\1\60\1\151\1\154\1\60\1\156\1\163\1\154\1\143\1\163\1\145\1\156"+
+        "\1\60\1\156\1\147\1\151\1\145\1\164\1\154\1\141\1\60\1\163\1\164"+
+        "\1\145\1\156\1\147\1\144\1\162\1\145\1\164\1\uffff\1\60\1\163\1"+
+        "\144\1\145\1\156\1\60\1\151\1\162\1\145\1\uffff\2\60\1\144\1\145"+
+        "\1\156\1\60\1\156\1\uffff\1\60\1\144\1\147\1\141\2\60\1\164\1\145"+
+        "\1\60";
     static final String DFA5_maxS =
-        "\1\175\2\151\1\162\1\154\1\162\3\uffff\1\75\5\uffff\1\141\1\157"+
-        "\1\156\1\157\1\166\1\155\1\157\7\uffff\1\143\1\147\1\156\1\146\1"+
-        "\151\1\170\1\160\2\154\1\157\2\uffff\1\162\1\156\1\157\1\144\1\154"+
-        "\1\164\1\145\1\172\1\141\1\162\1\164\1\150\1\145\1\164\1\141\1\164"+
-        "\1\141\1\151\1\171\1\160\1\151\1\164\1\166\1\172\1\157\1\164\1\162"+
-        "\1\154\1\172\1\141\1\164\1\172\1\164\1\156\1\172\1\154\1\160\1\154"+
-        "\1\145\1\141\1\164\1\141\1\145\1\167\1\157\1\172\1\154\1\156\1\164"+
-        "\1\uffff\1\157\1\154\1\147\1\145\1\165\1\157\1\uffff\1\151\1\163"+
-        "\1\157\1\151\1\162\1\142\1\162\1\151\2\172\1\155\1\145\1\147\1\157"+
-        "\1\154\1\172\1\151\1\154\1\143\1\142\1\141\1\156\1\147\1\145\2\156"+
-        "\1\164\1\154\1\141\1\156\1\141\1\162\1\154\1\172\1\151\1\147\1\145"+
-        "\1\164\1\163\1\154\1\143\1\156\2\172\1\145\1\151\1\145\1\151\1\163"+
-        "\1\154\1\172\1\145\1\147\1\156\2\172\1\164\1\154\1\141\1\145\2\uffff"+
-        "\1\172\1\145\1\163\1\156\1\172\1\151\1\172\1\156\1\145\2\uffff\1"+
-        "\162\1\145\1\164\1\144\1\uffff\1\163\1\172\1\164\1\147\1\uffff\1"+
-        "\145\1\144\1\151\1\162\1\145\2\172\1\uffff\1\163\1\156\1\144\1\172"+
-        "\1\156\1\172\1\156\1\uffff\1\172\1\145\1\172\1\147\1\141\1\uffff"+
-        "\1\144\1\172\1\164\1\172\1\145\1\172";
+        "\1\175\3\uffff\1\75\5\uffff\1\141\1\162\1\157\1\145\1\151\1\156"+
+        "\1\157\1\166\1\155\2\157\11\uffff\1\162\1\157\1\156\1\146\1\147"+
+        "\1\157\1\144\1\154\1\164\1\145\1\172\1\141\1\160\1\170\1\162\1\151"+
+        "\1\160\2\164\1\150\1\166\1\172\1\157\1\164\1\162\1\154\1\141\1\164"+
+        "\1\172\1\141\1\145\1\164\1\141\2\164\1\145\1\167\1\157\1\172\2\154"+
+        "\1\163\1\142\2\162\1\151\1\157\1\154\1\164\2\172\1\155\1\145\1\151"+
+        "\1\165\1\157\1\154\1\164\1\141\1\156\1\172\1\151\1\157\1\154\1\141"+
+        "\1\162\1\147\1\142\1\141\1\156\1\145\2\151\1\163\1\147\1\172\1\151"+
+        "\1\154\1\172\1\156\1\163\1\154\1\143\1\163\1\145\1\156\1\172\1\156"+
+        "\1\147\1\151\1\145\1\164\1\154\1\141\1\172\1\163\1\164\1\145\1\156"+
+        "\1\147\1\144\1\162\1\145\1\164\1\uffff\1\172\1\163\1\144\1\145\1"+
+        "\156\1\172\1\151\1\162\1\145\1\uffff\2\172\1\144\1\145\1\156\1\172"+
+        "\1\156\1\uffff\1\172\1\144\1\147\1\141\2\172\1\164\1\145\1\172";
     static final String DFA5_acceptS =
-        "\6\uffff\1\11\1\12\1\13\1\uffff\1\15\1\16\1\17\1\20\1\21\7\uffff"+
-        "\1\25\1\26\1\27\1\30\1\31\1\32\1\33\12\uffff\1\11\1\14\61\uffff"+
-        "\1\2\6\uffff\1\6\74\uffff\1\4\1\5\11\uffff\1\3\1\7\4\uffff\1\10"+
-        "\4\uffff\1\1\7\uffff\1\22\7\uffff\1\23\5\uffff\1\24\6\uffff";
+        "\1\uffff\1\1\1\2\1\3\1\uffff\1\5\1\6\1\7\1\10\1\11\13\uffff\1\15"+
+        "\1\16\1\17\1\20\1\21\1\22\1\23\1\1\1\4\150\uffff\1\12\11\uffff\1"+
+        "\13\7\uffff\1\14\11\uffff";
     static final String DFA5_specialS =
-        "\u00d1\uffff}>";
+        "\u00a2\uffff}>";
     static final String[] DFA5_transitionS = {
-            "\1\33\1\34\25\uffff\1\32\1\uffff\1\14\5\uffff\1\12\1\13\2\26"+
-            "\1\7\1\26\1\6\1\26\1\uffff\11\30\1\uffff\1\10\1\uffff\1\11\12"+
-            "\uffff\1\27\16\uffff\3\27\5\uffff\1\31\1\uffff\1\21\1\22\1\20"+
-            "\1\31\1\4\6\31\1\2\2\31\1\23\1\5\1\31\1\1\1\24\1\3\1\31\1\17"+
-            "\1\31\1\25\2\31\1\15\1\uffff\1\16",
-            "\1\35\3\uffff\1\36",
-            "\1\40\3\uffff\1\37",
-            "\1\42\11\uffff\1\43\2\uffff\1\41",
-            "\1\44",
-            "\1\45\2\uffff\1\46",
+            "\1\32\1\33\25\uffff\1\31\1\uffff\1\7\5\uffff\1\5\1\6\2\25\1"+
+            "\2\1\25\1\1\1\25\1\uffff\11\27\1\uffff\1\3\1\uffff\1\4\12\uffff"+
+            "\1\26\16\uffff\3\26\5\uffff\1\30\1\uffff\1\17\1\20\1\14\10\30"+
+            "\1\15\2\30\1\21\1\13\1\30\1\16\1\22\1\23\1\30\1\12\1\30\1\24"+
+            "\2\30\1\10\1\uffff\1\11",
             "",
             "",
             "",
-            "\1\26",
+            "\1\25",
             "",
             "",
             "",
             "",
             "",
+            "\1\36",
+            "\1\37",
+            "\1\40",
+            "\1\41",
+            "\1\42",
+            "\1\43\13\uffff\1\44",
+            "\1\45\11\uffff\1\46",
+            "\1\50\3\uffff\1\47",
             "\1\51",
-            "\1\52",
-            "\1\53\13\uffff\1\54",
-            "\1\55\11\uffff\1\56",
-            "\1\60\3\uffff\1\57",
+            "\1\53\11\uffff\1\52",
+            "\1\54",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\55",
+            "\1\56",
+            "\1\57",
+            "\1\60",
             "\1\61",
             "\1\62",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\63",
             "\1\64",
             "\1\65",
             "\1\66",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\67",
             "\1\70",
             "\1\71",
             "\1\72",
             "\1\73",
             "\1\74",
-            "",
-            "",
-            "\1\75",
-            "\1\76",
+            "\1\75\1\76",
             "\1\77",
             "\1\100",
             "\1\101",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\102",
             "\1\103",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
             "\1\104",
             "\1\105",
             "\1\106",
             "\1\107",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\110",
             "\1\111",
             "\1\112",
             "\1\113",
-            "\1\114",
-            "\1\115",
+            "\1\115\22\uffff\1\114",
             "\1\116",
             "\1\117",
             "\1\120",
-            "\1\121\1\122",
+            "\1\121",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
+            "\1\122",
             "\1\123",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\124",
-            "\1\125",
+            "\1\125\17\uffff\1\124",
             "\1\126",
             "\1\127",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
             "\1\130",
             "\1\131",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\134\22\uffff\1\133",
-            "\1\135",
-            "\12\31\45\uffff\1\31\1\uffff\2\31\1\140\16\31\1\136\1\137\7"+
-            "\31",
-            "\1\142",
+            "\1\132",
+            "\1\133",
+            "\1\135\22\uffff\1\134",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
+            "\1\136",
+            "\1\137",
+            "\1\140",
+            "\1\142\7\uffff\1\141",
             "\1\143",
-            "\1\144\4\uffff\1\145",
+            "\1\144",
+            "\1\145",
             "\1\146",
             "\1\147",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\150",
             "\1\151",
             "\1\152",
             "\1\153",
             "\1\154",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
             "\1\155",
             "\1\156",
-            "\1\160\22\uffff\1\157",
-            "",
+            "\1\157",
+            "\1\160",
             "\1\161",
             "\1\162",
             "\1\163",
             "\1\164",
-            "\1\166\7\uffff\1\165",
+            "\1\165",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
+            "\1\166",
             "\1\167",
-            "",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\170",
             "\1\171",
             "\1\172",
@@ -1375,17 +1133,15 @@ public class specLexer extends Lexer {
             "\1\174",
             "\1\175",
             "\1\176",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\177",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
             "\1\u0080",
             "\1\u0081",
             "\1\u0082",
             "\1\u0083",
             "\1\u0084",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
             "\1\u0085",
-            "\1\u0086",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\u0087",
             "\1\u0088",
             "\1\u0089",
@@ -1395,90 +1151,34 @@ public class specLexer extends Lexer {
             "\1\u008d",
             "\1\u008e",
             "\1\u008f",
-            "\1\u0090",
+            "",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
             "\1\u0094",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\u0095",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
             "\1\u0096",
             "\1\u0097",
-            "\1\u0098",
+            "",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\u0099",
             "\1\u009a",
             "\1\u009b",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\u009c",
+            "",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\u009d",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
+            "\1\u009e",
+            "\1\u009f",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
+            "\12\30\45\uffff\1\30\1\uffff\32\30",
             "\1\u00a0",
             "\1\u00a1",
-            "\1\u00a2",
-            "\1\u00a3",
-            "\1\u00a4",
-            "\1\u00a5",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00a6",
-            "\1\u00a7",
-            "\1\u00a8",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00ab",
-            "\1\u00ac",
-            "\1\u00ad",
-            "\1\u00ae",
-            "",
-            "",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00b0",
-            "\1\u00b1",
-            "\1\u00b2",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00b3",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00b5",
-            "\1\u00b6",
-            "",
-            "",
-            "\1\u00b7",
-            "\1\u00b8",
-            "\1\u00b9",
-            "\1\u00ba",
-            "",
-            "\1\u00bb",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00bd",
-            "\1\u00be",
-            "",
-            "\1\u00bf",
-            "\1\u00c0",
-            "\1\u00c1",
-            "\1\u00c2",
-            "\1\u00c3",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "",
-            "\1\u00c5",
-            "\1\u00c6",
-            "\1\u00c7",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00c8",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00c9",
-            "",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00cb",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00cc",
-            "\1\u00cd",
-            "",
-            "\1\u00ce",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00cf",
-            "\12\31\45\uffff\1\31\1\uffff\32\31",
-            "\1\u00d0",
-            "\12\31\45\uffff\1\31\1\uffff\32\31"
+            "\12\30\45\uffff\1\30\1\uffff\32\30"
     };
 
     static final short[] DFA5_eot = DFA.unpackEncodedString(DFA5_eotS);
@@ -1511,7 +1211,7 @@ public class specLexer extends Lexer {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | OPERATOR | PROPERTY | INT | ID | WS | TAB | NEWLINE );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | OPERATOR | PROPERTY | INT | ID | WS | TAB | NEWLINE );";
         }
     }
 

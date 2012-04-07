@@ -26,22 +26,33 @@ public class officer {
     private ArrayList<node> solved;
     private HashMap typeToShapesListIndex;
     private ArrayList<ArrayList<shape>> shapes;
-    private String[] classes = {"rectangle", "triangle", "ellipse", "line", "polygon", "text", "textrect"};
+
+
+    private String[] primitiveObjects = {"rectangle", "triangle", "ellipse", "line", "polygon", "text", "textrect"};
+    private HashMap primitiveObjectsHashMap;
+    private ArrayList allObjects;
+    private int curCount = 0;
 
     public officer() {
         objects = new ArrayList();
         shapes = new ArrayList();
+        allObjects = new ArrayList();
         solved = new ArrayList();
-        for (int i= 0; i < classes.length; i++) {
+        primitiveObjectsHashMap = new HashMap();
+
+        for (int i= 0; i < primitiveObjects.length; i++) {
             shapes.add(new ArrayList());
+            allObjects.add(primitiveObjects[i]);
+            primitiveObjectsHashMap.put(primitiveObjects[i], "");
         }
-        typeToShapesListIndex = initShapesListIndex(classes);
+        typeToShapesListIndex = initShapesListIndex(allObjects);
     }
 
-    private HashMap initShapesListIndex(String[] c) {
+    private HashMap initShapesListIndex(ArrayList c) {
         HashMap m = new HashMap();
-        for (int i= 0; i < c.length; i++) {
-            m.put(c[i], i);
+        for (int i= 0; i < c.size(); i++) {
+            m.put(c.get(i), i);
+            curCount++;
         }
         return m;
     }
@@ -126,19 +137,56 @@ public class officer {
         else {
             if(typeMap.containsKey(n.getLabel())) {
                 // the object was declared in the variables section
-                String objectType = typeMap.get(n.getLabel()).toString();
-                String id = n.getLabel();
-                if(typeToShapesListIndex.containsKey(objectType)) {
-                    int index = Integer.parseInt(typeToShapesListIndex.get(objectType).toString());
-                    ArrayList<shape> s = shapes.get(index);
-                    variable v = new variable(id);
-                    for (int i= 0; i < s.size(); i++) {
-                        component c = new component();
-                        c.addShape(s.get(i));
-                        v.addInstance(c);
-                        n.addComponent(c);
+
+                if(allObjects.contains(typeMap.get(n.getLabel()))) {
+                    // if it's a normal object that has already been defined or a primitive object
+                    String objectType = typeMap.get(n.getLabel()).toString();
+                    String id = n.getLabel();
+                    if(typeToShapesListIndex.containsKey(objectType)) {
+                   //     System.out.println("initializing leaf: " + n.getLabel());
+                        int index = Integer.parseInt(typeToShapesListIndex.get(objectType).toString());
+                        ArrayList<shape> s = shapes.get(index);
+                        variable v = new variable(id);
+                        for (int i= 0; i < s.size(); i++) {
+                            component c = new component();
+                            c.addShape(s.get(i));
+                            v.addInstance(c);
+                            n.addComponent(c);
+                        }
+                        instances.add(v);
                     }
-                    instances.add(v);
+                }
+                else {
+                    String currentId = typeMap.get(n.getLabel()).toString();
+                    System.out.println("Need to check dependancy object: " + currentId);
+                    for (int i= 0; i < objects.size(); i++) {
+                        if(currentId.equals(objects.get(i).getId())) {
+                            specobject speco = objects.get(i);
+                            boolean checko = speco.check();
+                            node n2 = speco.getProperties();
+                            System.out.println(currentId + " boundaries defined: (" + n2.getCardinal() + ")");
+                            for (int j= 0; j < n2.getCardinal(); j++) {
+                                n.addComponent(n2.getComponent(j));
+                                n2.getComponent(j).print();
+                            }
+                            allObjects.add(typeMap.get(n.getLabel()));
+                            primitiveObjectsHashMap.put(typeMap.get(n.getLabel()), "");
+                            typeToShapesListIndex.put(typeMap.get(n.getLabel()), curCount);
+                            curCount++;
+
+                            ArrayList<shape> temp = new ArrayList();
+                            for(int k=0; k<n2.getCardinal(); k++) {
+                                int xx = ((rectangle)n2.getComponent(k).getShape(0)).getX();
+                                int yy = ((rectangle)n2.getComponent(k).getShape(0)).getY();
+                                int ww = ((rectangle)n2.getComponent(k).getShape(0)).getWIDTH();
+                                int hh = ((rectangle)n2.getComponent(k).getShape(0)).getHEIGHT();
+                                rectangle rect = new rectangle(xx, yy, ww, hh);
+                                temp.add(rect);
+                            }
+                            shapes.add(temp);
+
+                        }
+                    }
                 }
             }
             else {
@@ -171,7 +219,9 @@ public class officer {
                 // if it has not been checked and is not even in the list of objects to check, throw an error
                 if(!alreadyChecked && !savedToCheck)
                     if(!currentId.equals("x") && !currentId.equals("y") && !currentId.equals("width") && !currentId.equals("height"))
-                        System.out.println("object '" + currentId + "' does not exist");
+                    {
+                    //    System.out.println("object '" + currentId + "' does not exist");
+                    }
             }
         }
     }

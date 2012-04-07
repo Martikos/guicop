@@ -31,7 +31,6 @@ public class specobject {
     private String id;
     private boolean solved;
 
-
     public specobject(officer o, String ids, Tree v, Tree p, Tree c) {
         blart = o;
         id = ids;
@@ -64,10 +63,16 @@ public class specobject {
 
         boolean satisfied = endNode.getSatisfied();
         solved = true;
-        if(satisfied)
+        if(satisfied) {
+            System.out.println("------------------------------------------");
             System.out.println(id + " is satisfied");
-        else
+            System.out.println("------------------------------------------");
+        }
+        else {
+            System.out.println("------------------------------------------");
             System.out.println(id + " is not satisfied");
+            System.out.println("------------------------------------------");
+        }
         return satisfied;
     }
 
@@ -109,6 +114,7 @@ public class specobject {
         return n;
     }
 
+
     public node getProperties() {
 
         HashMap property = new HashMap();
@@ -128,7 +134,7 @@ public class specobject {
                 node n2 = buildNodeTree(subChild, n1);
 
                 blart.initializeLeafs(n2, instances, variables);
-                node res = ch.traverse(n2);
+                node res = ch.traverseProperties(n2);
                 int num = res.getValuesSize();
                 if(num<minValuesSize)
                     minValuesSize = num;

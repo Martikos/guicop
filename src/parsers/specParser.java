@@ -1,11 +1,5 @@
-/**
- * @author M4rc Adam
- * Department of Electrical and Computer Engineering
- * Faculty of Engineering and Architecture
- * American University of Beirut
- */
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g 2012-04-07 03:35:41
 package parsers;
-
 import org.antlr.runtime.*;
 import java.util.Stack;
 import java.util.List;
@@ -16,24 +10,16 @@ import org.antlr.runtime.tree.*;
 
 public class specParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "OPERATOR", "PROPERTY", "INT", "ID", "WS", "TAB", "NEWLINE", "'rectangle'", "'line'", "'triangle'", "'ellipse'", "'polygon'", "'text'", "'textrect'", "'polyline'", "'.'", "','", "';'", "'='", "'('", "')'", "'\\\"'", "'{'", "'}'", "'variables'", "'properties'", "'constraints'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "OPERATOR", "PROPERTY", "INT", "ID", "WS", "TAB", "NEWLINE", "'.'", "','", "';'", "'='", "'('", "')'", "'\\\"'", "'{'", "'}'", "'variables'", "'properties'", "'constraints'"
     };
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int OPERATOR=4;
     public static final int T__22=22;
+    public static final int OPERATOR=4;
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int TAB=9;
     public static final int INT=6;
     public static final int ID=7;
     public static final int EOF=-1;
-    public static final int T__30=30;
     public static final int T__19=19;
     public static final int WS=8;
     public static final int T__16=16;
@@ -41,8 +27,8 @@ public class specParser extends Parser {
     public static final int NEWLINE=10;
     public static final int T__18=18;
     public static final int T__17=17;
-    public static final int PROPERTY=5;
     public static final int T__12=12;
+    public static final int PROPERTY=5;
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
@@ -72,102 +58,47 @@ public class specParser extends Parser {
     public String getGrammarFileName() { return "/home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g"; }
 
 
-    public static class shape_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "shape"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:48:1: shape : ( 'rectangle' | 'line' | 'triangle' | 'ellipse' | 'polygon' | 'text' | 'textrect' | 'polyline' );
-    public final specParser.shape_return shape() throws RecognitionException {
-        specParser.shape_return retval = new specParser.shape_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token set1=null;
-
-        Object set1_tree=null;
-
-        try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:48:7: ( 'rectangle' | 'line' | 'triangle' | 'ellipse' | 'polygon' | 'text' | 'textrect' | 'polyline' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:
-            {
-            root_0 = (Object)adaptor.nil();
-
-            set1=(Token)input.LT(1);
-            if ( (input.LA(1)>=11 && input.LA(1)<=18) ) {
-                input.consume();
-                adaptor.addChild(root_0, (Object)adaptor.create(set1));
-                state.errorRecovery=false;
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                throw mse;
-            }
-
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "shape"
-
     public static class membervariableaccess_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
     // $ANTLR start "membervariableaccess"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:88:1: membervariableaccess : ( ID '.' ID ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:78:1: membervariableaccess : ( ID '.' ID ) ;
     public final specParser.membervariableaccess_return membervariableaccess() throws RecognitionException {
         specParser.membervariableaccess_return retval = new specParser.membervariableaccess_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token ID2=null;
-        Token char_literal3=null;
-        Token ID4=null;
+        Token ID1=null;
+        Token char_literal2=null;
+        Token ID3=null;
 
-        Object ID2_tree=null;
-        Object char_literal3_tree=null;
-        Object ID4_tree=null;
+        Object ID1_tree=null;
+        Object char_literal2_tree=null;
+        Object ID3_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:2: ( ( ID '.' ID ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:4: ( ID '.' ID )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:79:2: ( ( ID '.' ID ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:79:4: ( ID '.' ID )
             {
             root_0 = (Object)adaptor.nil();
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:4: ( ID '.' ID )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:5: ID '.' ID
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:79:4: ( ID '.' ID )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:79:5: ID '.' ID
             {
-            ID2=(Token)match(input,ID,FOLLOW_ID_in_membervariableaccess327);
-            ID2_tree = (Object)adaptor.create(ID2);
-            adaptor.addChild(root_0, ID2_tree);
+            ID1=(Token)match(input,ID,FOLLOW_ID_in_membervariableaccess282);
+            ID1_tree = (Object)adaptor.create(ID1);
+            adaptor.addChild(root_0, ID1_tree);
 
-            char_literal3=(Token)match(input,19,FOLLOW_19_in_membervariableaccess329);
-            char_literal3_tree = (Object)adaptor.create(char_literal3);
-            root_0 = (Object)adaptor.becomeRoot(char_literal3_tree, root_0);
+            char_literal2=(Token)match(input,11,FOLLOW_11_in_membervariableaccess284);
+            char_literal2_tree = (Object)adaptor.create(char_literal2);
+            root_0 = (Object)adaptor.becomeRoot(char_literal2_tree, root_0);
 
-            ID4=(Token)match(input,ID,FOLLOW_ID_in_membervariableaccess332);
-            ID4_tree = (Object)adaptor.create(ID4);
-            adaptor.addChild(root_0, ID4_tree);
+            ID3=(Token)match(input,ID,FOLLOW_ID_in_membervariableaccess287);
+            ID3_tree = (Object)adaptor.create(ID3);
+            adaptor.addChild(root_0, ID3_tree);
 
 
             }
@@ -199,78 +130,76 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "variablesdecl"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:92:1: variablesdecl : ( NEWLINE TAB TAB shape WS ID ( ',' WS ID )* ';' ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:82:1: variablesdecl : ( NEWLINE TAB TAB ID WS ID ( ',' WS ID )* ';' ) ;
     public final specParser.variablesdecl_return variablesdecl() throws RecognitionException {
         specParser.variablesdecl_return retval = new specParser.variablesdecl_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token NEWLINE5=null;
+        Token NEWLINE4=null;
+        Token TAB5=null;
         Token TAB6=null;
-        Token TAB7=null;
-        Token WS9=null;
-        Token ID10=null;
-        Token char_literal11=null;
-        Token WS12=null;
-        Token ID13=null;
-        Token char_literal14=null;
-        specParser.shape_return shape8 = null;
+        Token ID7=null;
+        Token WS8=null;
+        Token ID9=null;
+        Token char_literal10=null;
+        Token WS11=null;
+        Token ID12=null;
+        Token char_literal13=null;
 
-
-        Object NEWLINE5_tree=null;
+        Object NEWLINE4_tree=null;
+        Object TAB5_tree=null;
         Object TAB6_tree=null;
-        Object TAB7_tree=null;
-        Object WS9_tree=null;
-        Object ID10_tree=null;
-        Object char_literal11_tree=null;
-        Object WS12_tree=null;
-        Object ID13_tree=null;
-        Object char_literal14_tree=null;
+        Object ID7_tree=null;
+        Object WS8_tree=null;
+        Object ID9_tree=null;
+        Object char_literal10_tree=null;
+        Object WS11_tree=null;
+        Object ID12_tree=null;
+        Object char_literal13_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:93:2: ( ( NEWLINE TAB TAB shape WS ID ( ',' WS ID )* ';' ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:93:4: ( NEWLINE TAB TAB shape WS ID ( ',' WS ID )* ';' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:83:2: ( ( NEWLINE TAB TAB ID WS ID ( ',' WS ID )* ';' ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:83:4: ( NEWLINE TAB TAB ID WS ID ( ',' WS ID )* ';' )
             {
             root_0 = (Object)adaptor.nil();
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:93:4: ( NEWLINE TAB TAB shape WS ID ( ',' WS ID )* ';' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:93:5: NEWLINE TAB TAB shape WS ID ( ',' WS ID )* ';'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:83:4: ( NEWLINE TAB TAB ID WS ID ( ',' WS ID )* ';' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:83:5: NEWLINE TAB TAB ID WS ID ( ',' WS ID )* ';'
             {
-            NEWLINE5=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_variablesdecl345);
-            TAB6=(Token)match(input,TAB,FOLLOW_TAB_in_variablesdecl348);
-            TAB7=(Token)match(input,TAB,FOLLOW_TAB_in_variablesdecl351);
-            pushFollow(FOLLOW_shape_in_variablesdecl354);
-            shape8=shape();
+            NEWLINE4=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_variablesdecl300);
+            TAB5=(Token)match(input,TAB,FOLLOW_TAB_in_variablesdecl303);
+            TAB6=(Token)match(input,TAB,FOLLOW_TAB_in_variablesdecl306);
+            ID7=(Token)match(input,ID,FOLLOW_ID_in_variablesdecl309);
+            ID7_tree = (Object)adaptor.create(ID7);
+            root_0 = (Object)adaptor.becomeRoot(ID7_tree, root_0);
 
-            state._fsp--;
+            WS8=(Token)match(input,WS,FOLLOW_WS_in_variablesdecl312);
+            ID9=(Token)match(input,ID,FOLLOW_ID_in_variablesdecl315);
+            ID9_tree = (Object)adaptor.create(ID9);
+            adaptor.addChild(root_0, ID9_tree);
 
-            root_0 = (Object)adaptor.becomeRoot(shape8.getTree(), root_0);
-            WS9=(Token)match(input,WS,FOLLOW_WS_in_variablesdecl357);
-            ID10=(Token)match(input,ID,FOLLOW_ID_in_variablesdecl360);
-            ID10_tree = (Object)adaptor.create(ID10);
-            adaptor.addChild(root_0, ID10_tree);
-
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:93:38: ( ',' WS ID )*
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:83:35: ( ',' WS ID )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==20) ) {
+                if ( (LA1_0==12) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:93:39: ',' WS ID
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:83:36: ',' WS ID
             	    {
-            	    char_literal11=(Token)match(input,20,FOLLOW_20_in_variablesdecl363);
-            	    WS12=(Token)match(input,WS,FOLLOW_WS_in_variablesdecl366);
-            	    ID13=(Token)match(input,ID,FOLLOW_ID_in_variablesdecl369);
-            	    ID13_tree = (Object)adaptor.create(ID13);
-            	    adaptor.addChild(root_0, ID13_tree);
+            	    char_literal10=(Token)match(input,12,FOLLOW_12_in_variablesdecl318);
+            	    WS11=(Token)match(input,WS,FOLLOW_WS_in_variablesdecl321);
+            	    ID12=(Token)match(input,ID,FOLLOW_ID_in_variablesdecl324);
+            	    ID12_tree = (Object)adaptor.create(ID12);
+            	    adaptor.addChild(root_0, ID12_tree);
 
 
             	    }
@@ -281,7 +210,7 @@ public class specParser extends Parser {
                 }
             } while (true);
 
-            char_literal14=(Token)match(input,21,FOLLOW_21_in_variablesdecl372);
+            char_literal13=(Token)match(input,13,FOLLOW_13_in_variablesdecl327);
 
             }
 
@@ -312,34 +241,34 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "expression"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:95:1: expression : membervariableaccess ( OPERATOR membervariableaccess )* ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:85:1: expression : membervariableaccess ( OPERATOR membervariableaccess )* ;
     public final specParser.expression_return expression() throws RecognitionException {
         specParser.expression_return retval = new specParser.expression_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token OPERATOR16=null;
-        specParser.membervariableaccess_return membervariableaccess15 = null;
+        Token OPERATOR15=null;
+        specParser.membervariableaccess_return membervariableaccess14 = null;
 
-        specParser.membervariableaccess_return membervariableaccess17 = null;
+        specParser.membervariableaccess_return membervariableaccess16 = null;
 
 
-        Object OPERATOR16_tree=null;
+        Object OPERATOR15_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:96:2: ( membervariableaccess ( OPERATOR membervariableaccess )* )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:96:4: membervariableaccess ( OPERATOR membervariableaccess )*
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:86:2: ( membervariableaccess ( OPERATOR membervariableaccess )* )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:86:4: membervariableaccess ( OPERATOR membervariableaccess )*
             {
             root_0 = (Object)adaptor.nil();
 
-            pushFollow(FOLLOW_membervariableaccess_in_expression383);
-            membervariableaccess15=membervariableaccess();
+            pushFollow(FOLLOW_membervariableaccess_in_expression338);
+            membervariableaccess14=membervariableaccess();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, membervariableaccess15.getTree());
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:96:25: ( OPERATOR membervariableaccess )*
+            adaptor.addChild(root_0, membervariableaccess14.getTree());
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:86:25: ( OPERATOR membervariableaccess )*
             loop2:
             do {
                 int alt2=2;
@@ -352,18 +281,18 @@ public class specParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:96:26: OPERATOR membervariableaccess
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:86:26: OPERATOR membervariableaccess
             	    {
-            	    OPERATOR16=(Token)match(input,OPERATOR,FOLLOW_OPERATOR_in_expression386);
-            	    OPERATOR16_tree = (Object)adaptor.create(OPERATOR16);
-            	    root_0 = (Object)adaptor.becomeRoot(OPERATOR16_tree, root_0);
+            	    OPERATOR15=(Token)match(input,OPERATOR,FOLLOW_OPERATOR_in_expression341);
+            	    OPERATOR15_tree = (Object)adaptor.create(OPERATOR15);
+            	    root_0 = (Object)adaptor.becomeRoot(OPERATOR15_tree, root_0);
 
-            	    pushFollow(FOLLOW_membervariableaccess_in_expression389);
-            	    membervariableaccess17=membervariableaccess();
+            	    pushFollow(FOLLOW_membervariableaccess_in_expression344);
+            	    membervariableaccess16=membervariableaccess();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, membervariableaccess17.getTree());
+            	    adaptor.addChild(root_0, membervariableaccess16.getTree());
 
             	    }
             	    break;
@@ -400,59 +329,59 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "propertiesdecl"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:98:1: propertiesdecl : ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:88:1: propertiesdecl : ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE ) ;
     public final specParser.propertiesdecl_return propertiesdecl() throws RecognitionException {
         specParser.propertiesdecl_return retval = new specParser.propertiesdecl_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
+        Token TAB17=null;
         Token TAB18=null;
-        Token TAB19=null;
-        Token PROPERTY20=null;
-        Token WS21=null;
-        Token char_literal22=null;
-        Token WS23=null;
-        Token char_literal25=null;
-        Token NEWLINE26=null;
-        specParser.expression_return expression24 = null;
+        Token PROPERTY19=null;
+        Token WS20=null;
+        Token char_literal21=null;
+        Token WS22=null;
+        Token char_literal24=null;
+        Token NEWLINE25=null;
+        specParser.expression_return expression23 = null;
 
 
+        Object TAB17_tree=null;
         Object TAB18_tree=null;
-        Object TAB19_tree=null;
-        Object PROPERTY20_tree=null;
-        Object WS21_tree=null;
-        Object char_literal22_tree=null;
-        Object WS23_tree=null;
-        Object char_literal25_tree=null;
-        Object NEWLINE26_tree=null;
+        Object PROPERTY19_tree=null;
+        Object WS20_tree=null;
+        Object char_literal21_tree=null;
+        Object WS22_tree=null;
+        Object char_literal24_tree=null;
+        Object NEWLINE25_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:99:2: ( ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:99:4: ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:2: ( ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:4: ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE )
             {
             root_0 = (Object)adaptor.nil();
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:99:4: ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:99:5: TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:4: ( TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:89:5: TAB TAB PROPERTY WS '=' WS expression ';' NEWLINE
             {
-            TAB18=(Token)match(input,TAB,FOLLOW_TAB_in_propertiesdecl402);
-            TAB19=(Token)match(input,TAB,FOLLOW_TAB_in_propertiesdecl405);
-            PROPERTY20=(Token)match(input,PROPERTY,FOLLOW_PROPERTY_in_propertiesdecl408);
-            PROPERTY20_tree = (Object)adaptor.create(PROPERTY20);
-            root_0 = (Object)adaptor.becomeRoot(PROPERTY20_tree, root_0);
+            TAB17=(Token)match(input,TAB,FOLLOW_TAB_in_propertiesdecl357);
+            TAB18=(Token)match(input,TAB,FOLLOW_TAB_in_propertiesdecl360);
+            PROPERTY19=(Token)match(input,PROPERTY,FOLLOW_PROPERTY_in_propertiesdecl363);
+            PROPERTY19_tree = (Object)adaptor.create(PROPERTY19);
+            root_0 = (Object)adaptor.becomeRoot(PROPERTY19_tree, root_0);
 
-            WS21=(Token)match(input,WS,FOLLOW_WS_in_propertiesdecl411);
-            char_literal22=(Token)match(input,22,FOLLOW_22_in_propertiesdecl414);
-            WS23=(Token)match(input,WS,FOLLOW_WS_in_propertiesdecl417);
-            pushFollow(FOLLOW_expression_in_propertiesdecl420);
-            expression24=expression();
+            WS20=(Token)match(input,WS,FOLLOW_WS_in_propertiesdecl366);
+            char_literal21=(Token)match(input,14,FOLLOW_14_in_propertiesdecl369);
+            WS22=(Token)match(input,WS,FOLLOW_WS_in_propertiesdecl372);
+            pushFollow(FOLLOW_expression_in_propertiesdecl375);
+            expression23=expression();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expression24.getTree());
-            char_literal25=(Token)match(input,21,FOLLOW_21_in_propertiesdecl422);
-            NEWLINE26=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_propertiesdecl425);
+            adaptor.addChild(root_0, expression23.getTree());
+            char_literal24=(Token)match(input,13,FOLLOW_13_in_propertiesdecl377);
+            NEWLINE25=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_propertiesdecl380);
 
             }
 
@@ -483,46 +412,46 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "constraintsdecl"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:101:1: constraintsdecl : ( '(' constraintsdecl WS OPERATOR WS constraintsdecl ')' | membervariableaccess | ID | INT | '\\\"' ( ID | INT ) '\\\"' );
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:91:1: constraintsdecl : ( '(' constraintsdecl WS OPERATOR WS constraintsdecl ')' | membervariableaccess | ID | INT | '\\\"' ( ID | INT ) '\\\"' );
     public final specParser.constraintsdecl_return constraintsdecl() throws RecognitionException {
         specParser.constraintsdecl_return retval = new specParser.constraintsdecl_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token char_literal27=null;
-        Token WS29=null;
-        Token OPERATOR30=null;
-        Token WS31=null;
-        Token char_literal33=null;
-        Token ID35=null;
-        Token INT36=null;
-        Token char_literal37=null;
-        Token set38=null;
-        Token char_literal39=null;
-        specParser.constraintsdecl_return constraintsdecl28 = null;
+        Token char_literal26=null;
+        Token WS28=null;
+        Token OPERATOR29=null;
+        Token WS30=null;
+        Token char_literal32=null;
+        Token ID34=null;
+        Token INT35=null;
+        Token char_literal36=null;
+        Token set37=null;
+        Token char_literal38=null;
+        specParser.constraintsdecl_return constraintsdecl27 = null;
 
-        specParser.constraintsdecl_return constraintsdecl32 = null;
+        specParser.constraintsdecl_return constraintsdecl31 = null;
 
-        specParser.membervariableaccess_return membervariableaccess34 = null;
+        specParser.membervariableaccess_return membervariableaccess33 = null;
 
 
-        Object char_literal27_tree=null;
-        Object WS29_tree=null;
-        Object OPERATOR30_tree=null;
-        Object WS31_tree=null;
-        Object char_literal33_tree=null;
-        Object ID35_tree=null;
-        Object INT36_tree=null;
-        Object char_literal37_tree=null;
-        Object set38_tree=null;
-        Object char_literal39_tree=null;
+        Object char_literal26_tree=null;
+        Object WS28_tree=null;
+        Object OPERATOR29_tree=null;
+        Object WS30_tree=null;
+        Object char_literal32_tree=null;
+        Object ID34_tree=null;
+        Object INT35_tree=null;
+        Object char_literal36_tree=null;
+        Object set37_tree=null;
+        Object char_literal38_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:2: ( '(' constraintsdecl WS OPERATOR WS constraintsdecl ')' | membervariableaccess | ID | INT | '\\\"' ( ID | INT ) '\\\"' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:92:2: ( '(' constraintsdecl WS OPERATOR WS constraintsdecl ')' | membervariableaccess | ID | INT | '\\\"' ( ID | INT ) '\\\"' )
             int alt3=5;
             switch ( input.LA(1) ) {
-            case 23:
+            case 15:
                 {
                 alt3=1;
                 }
@@ -531,10 +460,10 @@ public class specParser extends Parser {
                 {
                 int LA3_2 = input.LA(2);
 
-                if ( (LA3_2==19) ) {
+                if ( (LA3_2==11) ) {
                     alt3=2;
                 }
-                else if ( (LA3_2==WS||LA3_2==21||LA3_2==24) ) {
+                else if ( (LA3_2==WS||LA3_2==13||LA3_2==16) ) {
                     alt3=3;
                 }
                 else {
@@ -550,7 +479,7 @@ public class specParser extends Parser {
                 alt3=4;
                 }
                 break;
-            case 25:
+            case 17:
                 {
                 alt3=5;
                 }
@@ -564,84 +493,84 @@ public class specParser extends Parser {
 
             switch (alt3) {
                 case 1 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:4: '(' constraintsdecl WS OPERATOR WS constraintsdecl ')'
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:92:4: '(' constraintsdecl WS OPERATOR WS constraintsdecl ')'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    char_literal27=(Token)match(input,23,FOLLOW_23_in_constraintsdecl436);
-                    pushFollow(FOLLOW_constraintsdecl_in_constraintsdecl439);
-                    constraintsdecl28=constraintsdecl();
+                    char_literal26=(Token)match(input,15,FOLLOW_15_in_constraintsdecl391);
+                    pushFollow(FOLLOW_constraintsdecl_in_constraintsdecl394);
+                    constraintsdecl27=constraintsdecl();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, constraintsdecl28.getTree());
-                    WS29=(Token)match(input,WS,FOLLOW_WS_in_constraintsdecl441);
-                    OPERATOR30=(Token)match(input,OPERATOR,FOLLOW_OPERATOR_in_constraintsdecl444);
-                    OPERATOR30_tree = (Object)adaptor.create(OPERATOR30);
-                    root_0 = (Object)adaptor.becomeRoot(OPERATOR30_tree, root_0);
+                    adaptor.addChild(root_0, constraintsdecl27.getTree());
+                    WS28=(Token)match(input,WS,FOLLOW_WS_in_constraintsdecl396);
+                    OPERATOR29=(Token)match(input,OPERATOR,FOLLOW_OPERATOR_in_constraintsdecl399);
+                    OPERATOR29_tree = (Object)adaptor.create(OPERATOR29);
+                    root_0 = (Object)adaptor.becomeRoot(OPERATOR29_tree, root_0);
 
-                    WS31=(Token)match(input,WS,FOLLOW_WS_in_constraintsdecl447);
-                    pushFollow(FOLLOW_constraintsdecl_in_constraintsdecl450);
-                    constraintsdecl32=constraintsdecl();
+                    WS30=(Token)match(input,WS,FOLLOW_WS_in_constraintsdecl402);
+                    pushFollow(FOLLOW_constraintsdecl_in_constraintsdecl405);
+                    constraintsdecl31=constraintsdecl();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, constraintsdecl32.getTree());
-                    char_literal33=(Token)match(input,24,FOLLOW_24_in_constraintsdecl452);
+                    adaptor.addChild(root_0, constraintsdecl31.getTree());
+                    char_literal32=(Token)match(input,16,FOLLOW_16_in_constraintsdecl407);
 
                     }
                     break;
                 case 2 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:103:4: membervariableaccess
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:93:4: membervariableaccess
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_membervariableaccess_in_constraintsdecl458);
-                    membervariableaccess34=membervariableaccess();
+                    pushFollow(FOLLOW_membervariableaccess_in_constraintsdecl413);
+                    membervariableaccess33=membervariableaccess();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, membervariableaccess34.getTree());
+                    adaptor.addChild(root_0, membervariableaccess33.getTree());
 
                     }
                     break;
                 case 3 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:104:4: ID
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:94:4: ID
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    ID35=(Token)match(input,ID,FOLLOW_ID_in_constraintsdecl463);
-                    ID35_tree = (Object)adaptor.create(ID35);
-                    adaptor.addChild(root_0, ID35_tree);
+                    ID34=(Token)match(input,ID,FOLLOW_ID_in_constraintsdecl418);
+                    ID34_tree = (Object)adaptor.create(ID34);
+                    adaptor.addChild(root_0, ID34_tree);
 
 
                     }
                     break;
                 case 4 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:105:4: INT
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:95:4: INT
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    INT36=(Token)match(input,INT,FOLLOW_INT_in_constraintsdecl468);
-                    INT36_tree = (Object)adaptor.create(INT36);
-                    adaptor.addChild(root_0, INT36_tree);
+                    INT35=(Token)match(input,INT,FOLLOW_INT_in_constraintsdecl423);
+                    INT35_tree = (Object)adaptor.create(INT35);
+                    adaptor.addChild(root_0, INT35_tree);
 
 
                     }
                     break;
                 case 5 :
-                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:106:4: '\\\"' ( ID | INT ) '\\\"'
+                    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:96:4: '\\\"' ( ID | INT ) '\\\"'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    char_literal37=(Token)match(input,25,FOLLOW_25_in_constraintsdecl473);
-                    char_literal37_tree = (Object)adaptor.create(char_literal37);
-                    adaptor.addChild(root_0, char_literal37_tree);
+                    char_literal36=(Token)match(input,17,FOLLOW_17_in_constraintsdecl428);
+                    char_literal36_tree = (Object)adaptor.create(char_literal36);
+                    adaptor.addChild(root_0, char_literal36_tree);
 
-                    set38=(Token)input.LT(1);
+                    set37=(Token)input.LT(1);
                     if ( (input.LA(1)>=INT && input.LA(1)<=ID) ) {
                         input.consume();
-                        adaptor.addChild(root_0, (Object)adaptor.create(set38));
+                        adaptor.addChild(root_0, (Object)adaptor.create(set37));
                         state.errorRecovery=false;
                     }
                     else {
@@ -649,9 +578,9 @@ public class specParser extends Parser {
                         throw mse;
                     }
 
-                    char_literal39=(Token)match(input,25,FOLLOW_25_in_constraintsdecl481);
-                    char_literal39_tree = (Object)adaptor.create(char_literal39);
-                    adaptor.addChild(root_0, char_literal39_tree);
+                    char_literal38=(Token)match(input,17,FOLLOW_17_in_constraintsdecl436);
+                    char_literal38_tree = (Object)adaptor.create(char_literal38);
+                    adaptor.addChild(root_0, char_literal38_tree);
 
 
                     }
@@ -682,45 +611,45 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "specobjects"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:111:1: specobjects : specobject ( ( NEWLINE )* specobject )* ( ( NEWLINE )* ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:101:1: specobjects : specobject ( ( NEWLINE )* specobject )* ( ( NEWLINE )* ) ;
     public final specParser.specobjects_return specobjects() throws RecognitionException {
         specParser.specobjects_return retval = new specParser.specobjects_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token NEWLINE41=null;
-        Token NEWLINE43=null;
-        specParser.specobject_return specobject40 = null;
+        Token NEWLINE40=null;
+        Token NEWLINE42=null;
+        specParser.specobject_return specobject39 = null;
 
-        specParser.specobject_return specobject42 = null;
+        specParser.specobject_return specobject41 = null;
 
 
-        Object NEWLINE41_tree=null;
-        Object NEWLINE43_tree=null;
+        Object NEWLINE40_tree=null;
+        Object NEWLINE42_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:2: ( specobject ( ( NEWLINE )* specobject )* ( ( NEWLINE )* ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:4: specobject ( ( NEWLINE )* specobject )* ( ( NEWLINE )* )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:2: ( specobject ( ( NEWLINE )* specobject )* ( ( NEWLINE )* ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:4: specobject ( ( NEWLINE )* specobject )* ( ( NEWLINE )* )
             {
             root_0 = (Object)adaptor.nil();
 
-            pushFollow(FOLLOW_specobject_in_specobjects496);
-            specobject40=specobject();
+            pushFollow(FOLLOW_specobject_in_specobjects451);
+            specobject39=specobject();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, specobject40.getTree());
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:15: ( ( NEWLINE )* specobject )*
+            adaptor.addChild(root_0, specobject39.getTree());
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:15: ( ( NEWLINE )* specobject )*
             loop5:
             do {
                 int alt5=2;
                 alt5 = dfa5.predict(input);
                 switch (alt5) {
             	case 1 :
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:16: ( NEWLINE )* specobject
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:16: ( NEWLINE )* specobject
             	    {
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:23: ( NEWLINE )*
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:23: ( NEWLINE )*
             	    loop4:
             	    do {
             	        int alt4=2;
@@ -733,9 +662,9 @@ public class specParser extends Parser {
 
             	        switch (alt4) {
             	    	case 1 :
-            	    	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:23: NEWLINE
+            	    	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:23: NEWLINE
             	    	    {
-            	    	    NEWLINE41=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobjects499);
+            	    	    NEWLINE40=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobjects454);
 
             	    	    }
             	    	    break;
@@ -745,12 +674,12 @@ public class specParser extends Parser {
             	        }
             	    } while (true);
 
-            	    pushFollow(FOLLOW_specobject_in_specobjects503);
-            	    specobject42=specobject();
+            	    pushFollow(FOLLOW_specobject_in_specobjects458);
+            	    specobject41=specobject();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, specobject42.getTree());
+            	    adaptor.addChild(root_0, specobject41.getTree());
 
             	    }
             	    break;
@@ -760,10 +689,10 @@ public class specParser extends Parser {
                 }
             } while (true);
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:39: ( ( NEWLINE )* )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:40: ( NEWLINE )*
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:39: ( ( NEWLINE )* )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:40: ( NEWLINE )*
             {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:47: ( NEWLINE )*
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:47: ( NEWLINE )*
             loop6:
             do {
                 int alt6=2;
@@ -776,9 +705,9 @@ public class specParser extends Parser {
 
                 switch (alt6) {
             	case 1 :
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:112:47: NEWLINE
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:102:47: NEWLINE
             	    {
-            	    NEWLINE43=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobjects508);
+            	    NEWLINE42=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobjects463);
 
             	    }
             	    break;
@@ -818,81 +747,81 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "specobject"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:115:1: specobject : ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:105:1: specobject : ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' ) ;
     public final specParser.specobject_return specobject() throws RecognitionException {
         specParser.specobject_return retval = new specParser.specobject_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token ID44=null;
-        Token WS45=null;
-        Token char_literal46=null;
-        Token WS47=null;
-        Token char_literal48=null;
-        Token NEWLINE49=null;
-        Token NEWLINE51=null;
-        Token NEWLINE53=null;
-        Token NEWLINE55=null;
-        Token char_literal56=null;
-        specParser.variables_return variables50 = null;
+        Token ID43=null;
+        Token WS44=null;
+        Token char_literal45=null;
+        Token WS46=null;
+        Token char_literal47=null;
+        Token NEWLINE48=null;
+        Token NEWLINE50=null;
+        Token NEWLINE52=null;
+        Token NEWLINE54=null;
+        Token char_literal55=null;
+        specParser.variables_return variables49 = null;
 
-        specParser.properties_return properties52 = null;
+        specParser.properties_return properties51 = null;
 
-        specParser.constraints_return constraints54 = null;
+        specParser.constraints_return constraints53 = null;
 
 
-        Object ID44_tree=null;
-        Object WS45_tree=null;
-        Object char_literal46_tree=null;
-        Object WS47_tree=null;
-        Object char_literal48_tree=null;
-        Object NEWLINE49_tree=null;
-        Object NEWLINE51_tree=null;
-        Object NEWLINE53_tree=null;
-        Object NEWLINE55_tree=null;
-        Object char_literal56_tree=null;
+        Object ID43_tree=null;
+        Object WS44_tree=null;
+        Object char_literal45_tree=null;
+        Object WS46_tree=null;
+        Object char_literal47_tree=null;
+        Object NEWLINE48_tree=null;
+        Object NEWLINE50_tree=null;
+        Object NEWLINE52_tree=null;
+        Object NEWLINE54_tree=null;
+        Object char_literal55_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:116:2: ( ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:116:4: ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:106:2: ( ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:106:4: ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' )
             {
             root_0 = (Object)adaptor.nil();
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:116:4: ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:116:5: ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:106:4: ( ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:106:5: ID WS '=' WS '{' NEWLINE variables NEWLINE properties NEWLINE constraints NEWLINE '}'
             {
-            ID44=(Token)match(input,ID,FOLLOW_ID_in_specobject523);
-            ID44_tree = (Object)adaptor.create(ID44);
-            root_0 = (Object)adaptor.becomeRoot(ID44_tree, root_0);
+            ID43=(Token)match(input,ID,FOLLOW_ID_in_specobject478);
+            ID43_tree = (Object)adaptor.create(ID43);
+            root_0 = (Object)adaptor.becomeRoot(ID43_tree, root_0);
 
-            WS45=(Token)match(input,WS,FOLLOW_WS_in_specobject526);
-            char_literal46=(Token)match(input,22,FOLLOW_22_in_specobject529);
-            WS47=(Token)match(input,WS,FOLLOW_WS_in_specobject532);
-            char_literal48=(Token)match(input,26,FOLLOW_26_in_specobject535);
-            NEWLINE49=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject540);
-            pushFollow(FOLLOW_variables_in_specobject546);
-            variables50=variables();
-
-            state._fsp--;
-
-            adaptor.addChild(root_0, variables50.getTree());
-            NEWLINE51=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject551);
-            pushFollow(FOLLOW_properties_in_specobject557);
-            properties52=properties();
+            WS44=(Token)match(input,WS,FOLLOW_WS_in_specobject481);
+            char_literal45=(Token)match(input,14,FOLLOW_14_in_specobject484);
+            WS46=(Token)match(input,WS,FOLLOW_WS_in_specobject487);
+            char_literal47=(Token)match(input,18,FOLLOW_18_in_specobject490);
+            NEWLINE48=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject495);
+            pushFollow(FOLLOW_variables_in_specobject501);
+            variables49=variables();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, properties52.getTree());
-            NEWLINE53=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject562);
-            pushFollow(FOLLOW_constraints_in_specobject568);
-            constraints54=constraints();
+            adaptor.addChild(root_0, variables49.getTree());
+            NEWLINE50=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject506);
+            pushFollow(FOLLOW_properties_in_specobject512);
+            properties51=properties();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, constraints54.getTree());
-            NEWLINE55=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject573);
-            char_literal56=(Token)match(input,27,FOLLOW_27_in_specobject578);
+            adaptor.addChild(root_0, properties51.getTree());
+            NEWLINE52=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject517);
+            pushFollow(FOLLOW_constraints_in_specobject523);
+            constraints53=constraints();
+
+            state._fsp--;
+
+            adaptor.addChild(root_0, constraints53.getTree());
+            NEWLINE54=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_specobject528);
+            char_literal55=(Token)match(input,19,FOLLOW_19_in_specobject533);
 
             }
 
@@ -923,48 +852,48 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "variables"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:127:1: variables : ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:117:1: variables : ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' ) ;
     public final specParser.variables_return variables() throws RecognitionException {
         specParser.variables_return retval = new specParser.variables_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TAB57=null;
-        Token string_literal58=null;
-        Token WS59=null;
-        Token char_literal60=null;
-        Token NEWLINE62=null;
-        Token TAB63=null;
-        Token char_literal64=null;
-        specParser.variablesdecl_return variablesdecl61 = null;
+        Token TAB56=null;
+        Token string_literal57=null;
+        Token WS58=null;
+        Token char_literal59=null;
+        Token NEWLINE61=null;
+        Token TAB62=null;
+        Token char_literal63=null;
+        specParser.variablesdecl_return variablesdecl60 = null;
 
 
-        Object TAB57_tree=null;
-        Object string_literal58_tree=null;
-        Object WS59_tree=null;
-        Object char_literal60_tree=null;
-        Object NEWLINE62_tree=null;
-        Object TAB63_tree=null;
-        Object char_literal64_tree=null;
+        Object TAB56_tree=null;
+        Object string_literal57_tree=null;
+        Object WS58_tree=null;
+        Object char_literal59_tree=null;
+        Object NEWLINE61_tree=null;
+        Object TAB62_tree=null;
+        Object char_literal63_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:128:2: ( ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:128:4: ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:118:2: ( ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:118:4: ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' )
             {
             root_0 = (Object)adaptor.nil();
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:128:4: ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:128:5: TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:118:4: ( TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:118:5: TAB 'variables' WS '{' ( variablesdecl )* NEWLINE TAB '}'
             {
-            TAB57=(Token)match(input,TAB,FOLLOW_TAB_in_variables592);
-            string_literal58=(Token)match(input,28,FOLLOW_28_in_variables595);
-            string_literal58_tree = (Object)adaptor.create(string_literal58);
-            root_0 = (Object)adaptor.becomeRoot(string_literal58_tree, root_0);
+            TAB56=(Token)match(input,TAB,FOLLOW_TAB_in_variables547);
+            string_literal57=(Token)match(input,20,FOLLOW_20_in_variables550);
+            string_literal57_tree = (Object)adaptor.create(string_literal57);
+            root_0 = (Object)adaptor.becomeRoot(string_literal57_tree, root_0);
 
-            WS59=(Token)match(input,WS,FOLLOW_WS_in_variables598);
-            char_literal60=(Token)match(input,26,FOLLOW_26_in_variables601);
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:129:4: ( variablesdecl )*
+            WS58=(Token)match(input,WS,FOLLOW_WS_in_variables553);
+            char_literal59=(Token)match(input,18,FOLLOW_18_in_variables556);
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:119:4: ( variablesdecl )*
             loop7:
             do {
                 int alt7=2;
@@ -989,14 +918,14 @@ public class specParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:129:4: variablesdecl
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:119:4: variablesdecl
             	    {
-            	    pushFollow(FOLLOW_variablesdecl_in_variables607);
-            	    variablesdecl61=variablesdecl();
+            	    pushFollow(FOLLOW_variablesdecl_in_variables562);
+            	    variablesdecl60=variablesdecl();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, variablesdecl61.getTree());
+            	    adaptor.addChild(root_0, variablesdecl60.getTree());
 
             	    }
             	    break;
@@ -1006,9 +935,9 @@ public class specParser extends Parser {
                 }
             } while (true);
 
-            NEWLINE62=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_variables613);
-            TAB63=(Token)match(input,TAB,FOLLOW_TAB_in_variables618);
-            char_literal64=(Token)match(input,27,FOLLOW_27_in_variables621);
+            NEWLINE61=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_variables568);
+            TAB62=(Token)match(input,TAB,FOLLOW_TAB_in_variables573);
+            char_literal63=(Token)match(input,19,FOLLOW_19_in_variables576);
 
             }
 
@@ -1039,49 +968,49 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "properties"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:133:1: properties : ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:123:1: properties : ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' ) ;
     public final specParser.properties_return properties() throws RecognitionException {
         specParser.properties_return retval = new specParser.properties_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TAB65=null;
-        Token string_literal66=null;
-        Token WS67=null;
-        Token char_literal68=null;
-        Token NEWLINE69=null;
-        Token TAB71=null;
-        Token char_literal72=null;
-        specParser.propertiesdecl_return propertiesdecl70 = null;
+        Token TAB64=null;
+        Token string_literal65=null;
+        Token WS66=null;
+        Token char_literal67=null;
+        Token NEWLINE68=null;
+        Token TAB70=null;
+        Token char_literal71=null;
+        specParser.propertiesdecl_return propertiesdecl69 = null;
 
 
-        Object TAB65_tree=null;
-        Object string_literal66_tree=null;
-        Object WS67_tree=null;
-        Object char_literal68_tree=null;
-        Object NEWLINE69_tree=null;
-        Object TAB71_tree=null;
-        Object char_literal72_tree=null;
+        Object TAB64_tree=null;
+        Object string_literal65_tree=null;
+        Object WS66_tree=null;
+        Object char_literal67_tree=null;
+        Object NEWLINE68_tree=null;
+        Object TAB70_tree=null;
+        Object char_literal71_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:134:2: ( ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:134:4: ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:124:2: ( ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:124:4: ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' )
             {
             root_0 = (Object)adaptor.nil();
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:134:4: ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:134:5: TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:124:4: ( TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:124:5: TAB 'properties' WS '{' NEWLINE ( propertiesdecl )* TAB '}'
             {
-            TAB65=(Token)match(input,TAB,FOLLOW_TAB_in_properties634);
-            string_literal66=(Token)match(input,29,FOLLOW_29_in_properties637);
-            string_literal66_tree = (Object)adaptor.create(string_literal66);
-            root_0 = (Object)adaptor.becomeRoot(string_literal66_tree, root_0);
+            TAB64=(Token)match(input,TAB,FOLLOW_TAB_in_properties589);
+            string_literal65=(Token)match(input,21,FOLLOW_21_in_properties592);
+            string_literal65_tree = (Object)adaptor.create(string_literal65);
+            root_0 = (Object)adaptor.becomeRoot(string_literal65_tree, root_0);
 
-            WS67=(Token)match(input,WS,FOLLOW_WS_in_properties640);
-            char_literal68=(Token)match(input,26,FOLLOW_26_in_properties643);
-            NEWLINE69=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_properties649);
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:136:4: ( propertiesdecl )*
+            WS66=(Token)match(input,WS,FOLLOW_WS_in_properties595);
+            char_literal67=(Token)match(input,18,FOLLOW_18_in_properties598);
+            NEWLINE68=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_properties604);
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:126:4: ( propertiesdecl )*
             loop8:
             do {
                 int alt8=2;
@@ -1100,14 +1029,14 @@ public class specParser extends Parser {
 
                 switch (alt8) {
             	case 1 :
-            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:136:4: propertiesdecl
+            	    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:126:4: propertiesdecl
             	    {
-            	    pushFollow(FOLLOW_propertiesdecl_in_properties655);
-            	    propertiesdecl70=propertiesdecl();
+            	    pushFollow(FOLLOW_propertiesdecl_in_properties610);
+            	    propertiesdecl69=propertiesdecl();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, propertiesdecl70.getTree());
+            	    adaptor.addChild(root_0, propertiesdecl69.getTree());
 
             	    }
             	    break;
@@ -1117,8 +1046,8 @@ public class specParser extends Parser {
                 }
             } while (true);
 
-            TAB71=(Token)match(input,TAB,FOLLOW_TAB_in_properties661);
-            char_literal72=(Token)match(input,27,FOLLOW_27_in_properties664);
+            TAB70=(Token)match(input,TAB,FOLLOW_TAB_in_properties616);
+            char_literal71=(Token)match(input,19,FOLLOW_19_in_properties619);
 
             }
 
@@ -1149,68 +1078,68 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start "constraints"
-    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:140:1: constraints : ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' ) ;
+    // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:130:1: constraints : ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' ) ;
     public final specParser.constraints_return constraints() throws RecognitionException {
         specParser.constraints_return retval = new specParser.constraints_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TAB73=null;
-        Token string_literal74=null;
-        Token WS75=null;
-        Token char_literal76=null;
-        Token NEWLINE77=null;
+        Token TAB72=null;
+        Token string_literal73=null;
+        Token WS74=null;
+        Token char_literal75=null;
+        Token NEWLINE76=null;
+        Token TAB77=null;
         Token TAB78=null;
-        Token TAB79=null;
-        Token char_literal81=null;
-        Token NEWLINE82=null;
-        Token TAB83=null;
-        Token char_literal84=null;
-        specParser.constraintsdecl_return constraintsdecl80 = null;
+        Token char_literal80=null;
+        Token NEWLINE81=null;
+        Token TAB82=null;
+        Token char_literal83=null;
+        specParser.constraintsdecl_return constraintsdecl79 = null;
 
 
-        Object TAB73_tree=null;
-        Object string_literal74_tree=null;
-        Object WS75_tree=null;
-        Object char_literal76_tree=null;
-        Object NEWLINE77_tree=null;
+        Object TAB72_tree=null;
+        Object string_literal73_tree=null;
+        Object WS74_tree=null;
+        Object char_literal75_tree=null;
+        Object NEWLINE76_tree=null;
+        Object TAB77_tree=null;
         Object TAB78_tree=null;
-        Object TAB79_tree=null;
-        Object char_literal81_tree=null;
-        Object NEWLINE82_tree=null;
-        Object TAB83_tree=null;
-        Object char_literal84_tree=null;
+        Object char_literal80_tree=null;
+        Object NEWLINE81_tree=null;
+        Object TAB82_tree=null;
+        Object char_literal83_tree=null;
 
         try {
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:141:2: ( ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' ) )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:141:4: ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:131:2: ( ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' ) )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:131:4: ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' )
             {
             root_0 = (Object)adaptor.nil();
 
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:141:4: ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' )
-            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:141:5: TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}'
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:131:4: ( TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}' )
+            // /home/elm/sandbox/aub/fyp/guicop-specification-language/spec.g:131:5: TAB 'constraints' WS '{' NEWLINE TAB TAB constraintsdecl ';' NEWLINE TAB '}'
             {
-            TAB73=(Token)match(input,TAB,FOLLOW_TAB_in_constraints677);
-            string_literal74=(Token)match(input,30,FOLLOW_30_in_constraints680);
-            string_literal74_tree = (Object)adaptor.create(string_literal74);
-            root_0 = (Object)adaptor.becomeRoot(string_literal74_tree, root_0);
+            TAB72=(Token)match(input,TAB,FOLLOW_TAB_in_constraints632);
+            string_literal73=(Token)match(input,22,FOLLOW_22_in_constraints635);
+            string_literal73_tree = (Object)adaptor.create(string_literal73);
+            root_0 = (Object)adaptor.becomeRoot(string_literal73_tree, root_0);
 
-            WS75=(Token)match(input,WS,FOLLOW_WS_in_constraints683);
-            char_literal76=(Token)match(input,26,FOLLOW_26_in_constraints686);
-            NEWLINE77=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_constraints692);
-            TAB78=(Token)match(input,TAB,FOLLOW_TAB_in_constraints698);
-            TAB79=(Token)match(input,TAB,FOLLOW_TAB_in_constraints701);
-            pushFollow(FOLLOW_constraintsdecl_in_constraints704);
-            constraintsdecl80=constraintsdecl();
+            WS74=(Token)match(input,WS,FOLLOW_WS_in_constraints638);
+            char_literal75=(Token)match(input,18,FOLLOW_18_in_constraints641);
+            NEWLINE76=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_constraints647);
+            TAB77=(Token)match(input,TAB,FOLLOW_TAB_in_constraints653);
+            TAB78=(Token)match(input,TAB,FOLLOW_TAB_in_constraints656);
+            pushFollow(FOLLOW_constraintsdecl_in_constraints659);
+            constraintsdecl79=constraintsdecl();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, constraintsdecl80.getTree());
-            char_literal81=(Token)match(input,21,FOLLOW_21_in_constraints706);
-            NEWLINE82=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_constraints712);
-            TAB83=(Token)match(input,TAB,FOLLOW_TAB_in_constraints717);
-            char_literal84=(Token)match(input,27,FOLLOW_27_in_constraints720);
+            adaptor.addChild(root_0, constraintsdecl79.getTree());
+            char_literal80=(Token)match(input,13,FOLLOW_13_in_constraints661);
+            NEWLINE81=(Token)match(input,NEWLINE,FOLLOW_NEWLINE_in_constraints667);
+            TAB82=(Token)match(input,TAB,FOLLOW_TAB_in_constraints672);
+            char_literal83=(Token)match(input,19,FOLLOW_19_in_constraints675);
 
             }
 
@@ -1288,94 +1217,93 @@ public class specParser extends Parser {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "()* loopback of 112:15: ( ( NEWLINE )* specobject )*";
+            return "()* loopback of 102:15: ( ( NEWLINE )* specobject )*";
         }
     }
 
 
-    public static final BitSet FOLLOW_set_in_shape0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_membervariableaccess327 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_membervariableaccess329 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_ID_in_membervariableaccess332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NEWLINE_in_variablesdecl345 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_variablesdecl348 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_variablesdecl351 = new BitSet(new long[]{0x000000000007F800L});
-    public static final BitSet FOLLOW_shape_in_variablesdecl354 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_variablesdecl357 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_ID_in_variablesdecl360 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_20_in_variablesdecl363 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_variablesdecl366 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_ID_in_variablesdecl369 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_21_in_variablesdecl372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_membervariableaccess_in_expression383 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_OPERATOR_in_expression386 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_membervariableaccess_in_expression389 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_TAB_in_propertiesdecl402 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_propertiesdecl405 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_PROPERTY_in_propertiesdecl408 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_propertiesdecl411 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_propertiesdecl414 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_propertiesdecl417 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_expression_in_propertiesdecl420 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_propertiesdecl422 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_propertiesdecl425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_constraintsdecl436 = new BitSet(new long[]{0x00000000028000C0L});
-    public static final BitSet FOLLOW_constraintsdecl_in_constraintsdecl439 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_constraintsdecl441 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OPERATOR_in_constraintsdecl444 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_constraintsdecl447 = new BitSet(new long[]{0x00000000028000C0L});
-    public static final BitSet FOLLOW_constraintsdecl_in_constraintsdecl450 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_constraintsdecl452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_membervariableaccess_in_constraintsdecl458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_constraintsdecl463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INT_in_constraintsdecl468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_constraintsdecl473 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_set_in_constraintsdecl475 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_constraintsdecl481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_specobject_in_specobjects496 = new BitSet(new long[]{0x0000000000000482L});
-    public static final BitSet FOLLOW_NEWLINE_in_specobjects499 = new BitSet(new long[]{0x0000000000000480L});
-    public static final BitSet FOLLOW_specobject_in_specobjects503 = new BitSet(new long[]{0x0000000000000482L});
-    public static final BitSet FOLLOW_NEWLINE_in_specobjects508 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_ID_in_specobject523 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_specobject526 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_specobject529 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_specobject532 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_specobject535 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_specobject540 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_variables_in_specobject546 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_specobject551 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_properties_in_specobject557 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_specobject562 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_constraints_in_specobject568 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_specobject573 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_specobject578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TAB_in_variables592 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_variables595 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_variables598 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_variables601 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_variablesdecl_in_variables607 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_variables613 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_variables618 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_variables621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TAB_in_properties634 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_properties637 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_properties640 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_properties643 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_properties649 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_propertiesdecl_in_properties655 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_properties661 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_properties664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TAB_in_constraints677 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_constraints680 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_WS_in_constraints683 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_constraints686 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_constraints692 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_constraints698 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_constraints701 = new BitSet(new long[]{0x00000000028000C0L});
-    public static final BitSet FOLLOW_constraintsdecl_in_constraints704 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_constraints706 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NEWLINE_in_constraints712 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_TAB_in_constraints717 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_constraints720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_membervariableaccess282 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_membervariableaccess284 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_ID_in_membervariableaccess287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NEWLINE_in_variablesdecl300 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_variablesdecl303 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_variablesdecl306 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_ID_in_variablesdecl309 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_variablesdecl312 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_ID_in_variablesdecl315 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_12_in_variablesdecl318 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_variablesdecl321 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_ID_in_variablesdecl324 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_13_in_variablesdecl327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_membervariableaccess_in_expression338 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_OPERATOR_in_expression341 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_membervariableaccess_in_expression344 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_TAB_in_propertiesdecl357 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_propertiesdecl360 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_PROPERTY_in_propertiesdecl363 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_propertiesdecl366 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_propertiesdecl369 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_propertiesdecl372 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_expression_in_propertiesdecl375 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_propertiesdecl377 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_propertiesdecl380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_constraintsdecl391 = new BitSet(new long[]{0x00000000000280C0L});
+    public static final BitSet FOLLOW_constraintsdecl_in_constraintsdecl394 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_constraintsdecl396 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OPERATOR_in_constraintsdecl399 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_constraintsdecl402 = new BitSet(new long[]{0x00000000000280C0L});
+    public static final BitSet FOLLOW_constraintsdecl_in_constraintsdecl405 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_constraintsdecl407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_membervariableaccess_in_constraintsdecl413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_constraintsdecl418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_constraintsdecl423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_constraintsdecl428 = new BitSet(new long[]{0x00000000000000C0L});
+    public static final BitSet FOLLOW_set_in_constraintsdecl430 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_constraintsdecl436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_specobject_in_specobjects451 = new BitSet(new long[]{0x0000000000000482L});
+    public static final BitSet FOLLOW_NEWLINE_in_specobjects454 = new BitSet(new long[]{0x0000000000000480L});
+    public static final BitSet FOLLOW_specobject_in_specobjects458 = new BitSet(new long[]{0x0000000000000482L});
+    public static final BitSet FOLLOW_NEWLINE_in_specobjects463 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_ID_in_specobject478 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_specobject481 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_specobject484 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_specobject487 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_specobject490 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_specobject495 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_variables_in_specobject501 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_specobject506 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_properties_in_specobject512 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_specobject517 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_constraints_in_specobject523 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_specobject528 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_specobject533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TAB_in_variables547 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_variables550 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_variables553 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_variables556 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_variablesdecl_in_variables562 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_variables568 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_variables573 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_variables576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TAB_in_properties589 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_properties592 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_properties595 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_properties598 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_properties604 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_propertiesdecl_in_properties610 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_properties616 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_properties619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TAB_in_constraints632 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_constraints635 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_WS_in_constraints638 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_constraints641 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_constraints647 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_constraints653 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_constraints656 = new BitSet(new long[]{0x00000000000280C0L});
+    public static final BitSet FOLLOW_constraintsdecl_in_constraints659 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_constraints661 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_NEWLINE_in_constraints667 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_TAB_in_constraints672 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_constraints675 = new BitSet(new long[]{0x0000000000000002L});
 
 }
